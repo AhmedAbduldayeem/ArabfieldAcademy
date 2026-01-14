@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arabfield Academy - Learn Arabic Online with Native Tutors</title>
+    <meta name="description" content="Learn Arabic online with expert native tutors at Arabfield Academy. Personalized courses, flexible scheduling, and cultural immersion. Start your journey today!">
+    <meta name="keywords" content="learn arabic online, arabic courses, native arabic tutors, online arabic classes, modern standard arabic, egyptian arabic">
+    <link rel="canonical" href="https://arabfieldacademy.netlify.app/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpg" href="images/logo.jpg">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Arabfield Academy - Learn Arabic Online">
+    <meta property="og:description" content="Master Arabic with expert native tutors and personalized curriculum. Start your journey to fluent Arabic communication.">
+    <meta property="og:image" content="https://arabfieldacademy.netlify.app/images/social-preview.jpg">
+    <meta property="og:url" content="https://arabfieldacademy.netlify.app/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Arabfield Academy">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Arabfield Academy - Learn Arabic Online">
+    <meta name="twitter:description" content="Master Arabic with expert native tutors and personalized curriculum.">
+    <meta name="twitter:image" content="https://arabfieldacademy.netlify.app/images/social-preview.jpg">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LanguageSchool",
+        "name": "Arabfield Academy",
+        "description": "Online Arabic language academy with native tutors",
+        "url": "https://arabfieldacademy.netlify.app",
+        "telephone": "+20-0150-860-1333",
+        "email": "Arabfield.Academy@gmail.com",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "Egypt"
+        },
+        "offers": {
+            "@type": "Offer",
+            "description": "Arabic language courses"
+        }
+    }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- باقي الستايل بدون تغيير -->
+    <style>
+        /* --- INDEX.HTML SPECIFIC STYLES --- */
+        .why-us-section { background-color: var(--card-background); }
+        .level-test-cta-section { background-color: var(--very-light-blue); text-align: center; }
+        .kids-test-cta-section { background: linear-gradient(135deg, #fff7e6, #ffe8cc); text-align: center; }
+        .promise-section { background-color: var(--very-light-blue); }
+        .family-section { background-color: var(--card-background); }
+        .counters-section { background-color: var(--primary-blue); color: white; }
+        .popular-programs-section { background-color: var(--very-light-blue); }
+        .testimonials-section { background-color: var(--card-background); }
+        .faq-section-wrapper { background-color: var(--very-light-blue); }
+        .blog-section-wrapper { background-color: var(--card-background); }
+        .level-test-cta-section .container { max-width: 800px; }
+        .level-test-cta-section .card-icon { 
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin: 0 auto 20px;
+        }
+        .level-test-cta-section p { font-size: 18px; color: #555; margin-bottom: 30px; }
+        .kids-test-cta-section .container { max-width: 800px; }
+        .kids-test-cta-section .card-icon { 
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin: 0 auto 20px;
+        }
+        .kids-test-cta-section p { font-size: 18px; color: #555; margin-bottom: 30px; }
+        .promise-card { text-align: center; max-width: 800px; margin: 0 auto; }
+        .promise-card .card-icon { 
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin: 0 auto 20px;
+        }
+        .promise-card h3 { font-size: 28px; }
+        .promise-card p { font-size: 18px; color: #555; }
+        .family-layout { display: grid; grid-template-columns: 1fr; gap: 50px; align-items: center; }
+        @media (min-width: 992px) { .family-layout { grid-template-columns: 1fr 1fr; } }
+        .family-image img { width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .family-content h2 { font-size: 36px; color: var(--primary-blue); margin-bottom: 20px; }
+        .family-content p { font-size: 18px; line-height: 1.8; color: #555; margin-bottom: 20px; }
+        .family-content .feature-p { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 15px; }
+        .family-content .tick-icon { color: var(--secondary-orange); font-size: 24px; margin-top: 4px; }
+        .program-card { background-color: var(--card-background); border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.07); padding: 30px; border: 1px solid var(--border-color); display: flex; flex-direction: column; text-align: center; }
+        .program-card .card-icon { 
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin: 0 auto 15px;
+        }
+        .program-card h3 { font-size: 22px; color: var(--primary-blue); margin-bottom: 15px; }
+        .program-card p { color: #555; line-height: 1.7; flex-grow: 1; }
+        .program-card .btn { margin-top: 20px; }
+        .counters-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: center; }
+        .counter-item .counter { font-size: 48px; font-weight: bold; }
+        .counter-item h4 { font-size: 18px; margin: 10px 0 0 0; font-weight: normal; opacity: 0.9; }
+        .testimonial-card { background-color: var(--card-background); border-radius: 12px; padding: 30px; text-align: center; display: flex; flex-direction: column; }
+        .testimonial-image { 
+            width: 120px;
+            height: 120px;
+            border-radius: 50%; 
+            object-fit: cover; 
+            margin-bottom: 20px; 
+            border: 4px solid var(--secondary-orange); 
+            align-self: center; 
+        }
+        .testimonial-quote { font-style: italic; font-size: 18px; line-height: 1.7; color: #555; margin-bottom: 20px; flex-grow: 1; }
+        .testimonial-author { font-weight: bold; color: var(--primary-blue); }
+        .testimonial-story-link { display: inline-block; margin-top: 15px; font-weight: bold; color: var(--secondary-orange); text-decoration: none; }
+        .testimonial-story-link:hover { text-decoration: underline; }
+        .faq-section { max-width: 800px; margin: 0 auto; }
+        .faq-item { border-bottom: 1px solid var(--border-color); }
+        .faq-question { padding: 20px 0; font-size: 18px; font-weight: bold; color: var(--primary-blue); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .faq-question::after { content: '+'; font-size: 24px; transition: transform 0.3s; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; }
+        .faq-answer p { padding: 0 0 20px 0; margin: 0; color: #555; line-height: 1.8; }
+        .faq-item.active .faq-question::after { transform: rotate(45deg); }
+        .faq-item.active .faq-answer { max-height: 300px; }
+        
+        /* تحسينات قسم المدونة */
+        .blog-section-wrapper { 
+            background-color: var(--card-background); 
+            position: relative;
+        }
+        .blog-section-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 30px; 
+        }
+        .blog-preview-card { 
+            background-color: var(--card-background); 
+            border-radius: 12px; 
+            overflow: hidden; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.07); 
+            transition: transform 0.3s, box-shadow 0.3s; 
+            border: 1px solid var(--border-color);
+        }
+        .blog-preview-card:hover { 
+            transform: translateY(-5px); 
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1); 
+        }
+        .blog-preview-image { 
+            width: 100%; 
+            height: 200px; 
+            object-fit: cover;
+            background-color: var(--light-blue);
+            transition: opacity 0.3s ease;
+        }
+        .blog-preview-image.loading {
+            opacity: 0.7;
+        }
+        .blog-preview-image.error {
+            background-color: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+            font-size: 14px;
+        }
+        .blog-preview-content { 
+            padding: 25px; 
+        }
+        .blog-preview-content h3 { 
+            margin: 0 0 10px 0; 
+            font-size: 20px; 
+        }
+        .blog-preview-content h3 a { 
+            text-decoration: none; 
+            color: var(--primary-blue); 
+        }
+        .blog-preview-content p { 
+            color: #555; 
+            font-size: 15px; 
+            line-height: 1.6; 
+            margin-bottom: 15px; 
+        }
+        .read-more-link { 
+            font-weight: bold; 
+            color: var(--secondary-orange); 
+            text-decoration: none; 
+        }
+        .read-more-link:hover {
+            text-decoration: underline;
+        }
+
+        /* تحسينات للصور الجديدة */
+        .card-icon-img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin: 0 auto 15px;
+            display: block;
+        }
+
+        /* تحسينات الأداء */
+        .lazy-load {
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .lazy-load.loaded {
+            opacity: 1;
+        }
+
+        /* تحسينات النموذج */
+        .validation-message {
+            color: #dc3545;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+        .loading-spinner {
+            color: var(--primary-blue);
+            font-weight: bold;
+        }
+
+        /* تحسينات الاستجابة للشاشات الصغيرة جداً */
+        @media (max-width: 320px) {
+            .hero-section h1 {
+                font-size: 36px;
+            }
+            .hero-section p {
+                font-size: 16px;
+            }
+            .section-title {
+                font-size: 28px;
+            }
+            .card-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .blog-section-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+    </style>
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <!-- باقي المحتوى بدون تغيير -->
+    <header class="main-header" id="main-header-placeholder"></header>
+
+    <section class="hero-section">
+        <h1 data-aos="fade-down">Plant the language, Harvest the culture</h1>
+        <p data-aos="fade-up" data-aos-delay="200">Master Arabic with expert native tutors and a curriculum designed just for you. Your journey to confident communication starts now.</p>
+        <div class="hero-buttons" data-aos="fade-up" data-aos-delay="400">
+            <a href="programs.html" class="btn btn-primary">Explore Our Programs</a>
+            <a href="#register" class="btn btn-secondary">Book a Free Trial</a>
+        </div>
+    </section>
+
+    <!-- باقي المحتوى بدون تغيير -->
+    <section class="section why-us-section">
+        <h2 class="section-title" data-aos="fade-up">Why Choose Arabfield Academy?</h2>
+        <div class="container card-grid">
+            <div class="card" data-aos="fade-up" data-aos-delay="100">
+                <img src="images/why-tutors.jpg" alt="Expert Native Arabic Tutors teaching online" class="card-icon-img lazy-load" loading="lazy">
+                <h3>Expert Native Tutors</h3>
+                <p>Learn from highly qualified native speakers who are passionate about teaching and have an open-minded approach to all cultures.</p>
+            </div>
+            <div class="card" data-aos="fade-up" data-aos-delay="200">
+                <img src="images/why-curriculum.jpg" alt="Personalized Arabic learning curriculum" class="card-icon-img lazy-load" loading="lazy">
+                <h3>Tailored Curriculum</h3>
+                <p>Personalized learning paths designed to meet your individual goals, whether for travel, business, or religious studies.</p>
+            </div>
+            <div class="card" data-aos="fade-up" data-aos-delay="300">
+                <img src="images/why-scheduling.jpg" alt="Flexible Arabic lesson scheduling" class="card-icon-img lazy-load" loading="lazy">
+                <h3>Flexible Scheduling</h3>
+                <p>Study at your own pace, anytime, anywhere. We adapt to your schedule and time zone, ensuring a convenient learning experience.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section level-test-cta-section" data-aos="zoom-in-up">
+        <div class="container">
+            <img src="images/level-test.jpg" alt="Arabic language level assessment test" class="card-icon lazy-load" loading="lazy">
+            <h2 class="section-title">Not Sure Where to Start?</h2>
+            <p>Our quick and intelligent level test will give you a clear idea of your current skills and recommend the perfect program to begin your journey. It only takes a few minutes!</p>
+            <a href="level-test.html" class="btn btn-primary">Take the Free Level Test</a>
+        </div>
+    </section>
+
+    <section class="section kids-test-cta-section" data-aos="fade-up">
+        <div class="container">
+            <img src="images/kids-program.jpg" alt="Arabic learning for children and kids" class="card-icon lazy-load" loading="lazy">
+            <h2 class="section-title">Arabic for Kids</h2>
+            <p>Our fun and interactive alphabet game is the perfect first step for young learners to fall in love with Arabic. Let the adventure begin!</p>
+            <a href="level-test-kids.html" class="btn btn-primary">Play the Alphabet Game</a>
+        </div>
+    </section>
+
+    <section class="section promise-section" data-aos="fade-up">
+        <div class="container">
+            <div class="promise-card">
+                <img src="images/promise-guarantee.jpg" alt="Arabfield Academy progress guarantee" class="card-icon lazy-load" loading="lazy">
+                <h3>Our Promise to You</h3>
+                <p>We are committed to your success. If you consistently attend your lessons and complete your assignments but don't feel you've made progress, we will provide you with <strong>4 additional hours of lessons, completely free of charge</strong>. Your journey is our journey.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section family-section">
+        <div class="container">
+            <div class="family-layout">
+                <div class="family-content" data-aos="fade-right">
+                    <h2>Learn Together, Grow Together</h2>
+                    <p>Learning Arabic as a family is a unique bonding experience. Our family packages are designed to be flexible, fun, and effective for all ages.</p>
+                    <p class="feature-p"><span class="tick-icon">✓</span> A shared pool of hours that any family member can use.</p>
+                    <p class="feature-p"><span class="tick-icon">✓</span> Lessons tailored to different age groups and levels.</p>
+                    <p class="feature-p"><span class="tick-icon">✓</span> A fun way to connect with your heritage and each other.</p>
+                    <a href="pricing.html#family-plans" class="btn btn-primary" style="margin-top: 15px;">See Family Plans</a>
+                </div>
+                <div class="family-image" data-aos="fade-left">
+                    <img src="images/Happy family.jpg" alt="Family learning Arabic together online" class="lazy-load" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section popular-programs-section">
+        <h2 class="section-title" data-aos="fade-up">Our Most Popular Programs</h2>
+        <div class="container card-grid">
+            <div class="program-card" data-aos="fade-up" data-aos-delay="100">
+                <img src="images/program-msa.jpg" alt="Modern Standard Arabic course" class="card-icon lazy-load" loading="lazy">
+                <h3>Modern Standard Arabic (MSA)</h3>
+                <p>Master the formal Arabic used in literature, news, and official communications across the Arab world.</p>
+                <a href="programs.html" class="btn btn-secondary">Learn More</a>
+            </div>
+            <div class="program-card" data-aos="fade-up" data-aos-delay="200">
+                <img src="images/program-egyptian.jpg" alt="Egyptian Colloquial Arabic course" class="card-icon lazy-load" loading="lazy">
+                <h3>Egyptian Colloquial Arabic</h3>
+                <p>Learn to speak like a native with our specialized course in the most widely understood Arabic dialect.</p>
+                <a href="programs.html" class="btn btn-secondary">Learn More</a>
+            </div>
+            <div class="program-card" data-aos="fade-up" data-aos-delay="300">
+                <img src="images/program-quran.jpg" alt="Quranic and Classical Arabic course" class="card-icon lazy-load" loading="lazy">
+                <h3>Quranic & Classical Arabic</h3>
+                <p>Embark on a spiritual journey to understand the Quran and classical Islamic texts in their original form.</p>
+                <a href="programs.html" class="btn btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section testimonials-section">
+        <h2 class="section-title" data-aos="fade-up">Journeys We've Illuminated</h2>
+        <div class="container card-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+            <div class="testimonial-card" data-aos="zoom-in" data-aos-delay="100">
+                <a href="posts/post-template.html?id=maria-egyptian"><img src="images/Maria.jpg" alt="Maria - Spanish student success story" class="testimonial-image lazy-load" loading="lazy"></a>
+                <p class="testimonial-quote">"It was completely different from my university classes. The first time I made my friends laugh with a phrase I learned, it was a huge victory for me."</p>
+                <p class="testimonial-author">Maria, Spain</p>
+                <a href="posts/post-template.html?id=maria-egyptian" class="testimonial-story-link">Read Maria's Story &rarr;</a>
+            </div>
+            <div class="testimonial-card" data-aos="zoom-in" data-aos-delay="200">
+                <a href="posts/post-template.html?id=daniel-msa"><img src="images/Daniel.jpg" alt="Daniel - German student success story" class="testimonial-image lazy-load" loading="lazy"></a>
+                <p class="testimonial-quote">"The confidence I felt was incredible. Being able to answer questions and debate points in MSA has fundamentally changed my career."</p>
+                <p class="testimonial-author">Daniel, Germany</p>
+                <a href="posts/post-template.html?id=daniel-msa" class="testimonial-story-link">Read Daniel's Story &rarr;</a>
+            </div>
+            <div class="testimonial-card" data-aos="zoom-in" data-aos-delay="300">
+                <a href="posts/post-template.html?id=laila-kids"><img src="images/Mother.jpg" alt="Fatima - Mother of Laila success story" class="testimonial-image lazy-load" loading="lazy"></a>
+                <p class="testimonial-quote">"Laila doesn't even realize she's 'learning'. She just thinks she's having her weekly fun session. It's been wonderful to watch."</p>
+                <p class="testimonial-author">Fatima, Laila's Mother, UK</p>
+                <a href="posts/post-template.html?id=laila-kids" class="testimonial-story-link">Read Laila's Story &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section faq-section-wrapper" id="faq" data-aos="fade-up">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="container faq-section">
+            <div class="faq-item"><div class="faq-question">What is the difference between MSA and dialects?</div><div class="faq-answer"><p>Modern Standard Arabic (MSA) is the formal, written language used in books, news, and official settings. Dialects are the spoken languages used in everyday life, and they vary from country to country. We recommend starting with MSA to build a strong foundation and then specializing in a dialect.</p></div></div>
+            <div class="faq-item"><div class="faq-question">Are the lessons live or pre-recorded?</div><div class="faq-answer"><p>All our lessons are 100% live and one-on-one with a dedicated native tutor. This ensures you get personalized feedback and can ask questions in real-time for the most effective learning experience.</p></div></div>
+            <div class="faq-item"><div class="faq-question">What happens after the free trial lesson?</div><div class="faq-answer"><p>After your 30-minute trial, your tutor will assess your level and recommend a starting point. You can then choose one of our flexible packages to continue your journey. There is absolutely no obligation to purchase anything.</p></div></div>
+            <div class="faq-item"><div class="faq-question">Can I change my tutor if I'm not comfortable?</div><div class="faq-answer"><p>Yes, of course. Your comfort and learning progress are our top priorities. If you feel the teaching style isn't a perfect match, you can simply request a different tutor at any time, and we will happily find another great tutor for you.</p></div></div>
+            <div class="faq-item"><div class="faq-question">What payment methods do you accept?</div><div class="faq-answer"><p>We accept a variety of payment methods for your convenience, including all major credit cards (Visa, MasterCard, American Express), PayPal, and direct bank transfers.</p></div></div>
+            <div class="faq-item"><div class="faq-question">What if I need to take a break from my studies?</div><div class="faq-answer"><p>We understand that life happens. Our student policy allows you to "freeze" your package for a minimum of one week and up to two months, so you don't lose your paid hours. Please contact our support team to arrange this.</p></div></div>
+            <div class="faq-item"><div class="faq-question">Are the learning materials included in the price?</div><div class="faq-answer"><p>Yes! All our plans include full access to our comprehensive digital learning materials, including interactive exercises, notes, and PDF books. There are no hidden fees for materials.</p></div></div>
+            <div class="faq-item"><div class="faq-question">How long is each lesson?</div><div class="faq-answer"><p>The standard lesson duration is 60 minutes. This provides enough time for a thorough review, introduction of new concepts, and sufficient practice without causing fatigue. We can also accommodate requests for longer or shorter sessions based on your needs.</p></div></div>
+        </div>
+    </section>
+
+    <section class="section blog-section-wrapper">
+        <h2 class="section-title" data-aos="fade-up">From Our Blog</h2>
+        <div class="container blog-section-grid" id="blog-previews" data-aos="fade-up" data-aos-delay="200">
+            <!-- سيتم تعبئة هذا القسم بالجافاسكريبت -->
+        </div>
+    </section>
+
+    <section class="section form-section" id="register" data-aos="fade-up">
+        <h2 class="section-title">Start Your Journey Today!</h2>
+        <div class="container">
+            <form action="https://formsubmit.co/Arabfield.Academy@gmail.com" method="POST" class="contact-form" id="trial-form">
+                <p style="text-align: center; margin-bottom: 20px;">Fill out the form below to book your free, no-commitment trial lesson!</p>
+                <input type="hidden" name="_subject" value="New Trial Lesson Registration!">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://arabfieldacademy.netlify.app/thank-you.html">
+                
+                <div class="form-group">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" required minlength="2">
+                    <div class="validation-message" id="name-validation"></div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+                    <div class="validation-message" id="email-validation"></div>
+                </div>
+                <div class="form-group">
+                    <label for="whatsapp">WhatsApp Number (with country code):</label>
+                    <input type="tel" id="whatsapp" name="whatsapp" placeholder="+1234567890" required pattern="^\+[1-9]\d{1,14}$">
+                    <div class="validation-message" id="whatsapp-validation"></div>
+                </div>
+                <div class="form-group">
+                    <label for="country">Country:</label>
+                    <input type="text" id="country" name="country" required minlength="2">
+                    <div class="validation-message" id="country-validation"></div>
+                </div>
+                <div class="form-group">
+                    <label for="goals">Your Learning Goals:</label>
+                    <textarea id="goals" name="goals" rows="4" placeholder="e.g., Conversational Arabic, Quranic Arabic, Travel..." minlength="10"></textarea>
+                    <div class="validation-message" id="goals-validation"></div>
+                </div>
+                <div style="text-align: center;">
+                    <button type="submit" class="btn btn-primary" id="submit-btn">Book My Free Trial</button>
+                    <div class="loading-spinner" id="loading-spinner" style="display: none;">Sending...</div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="main-footer" id="main-footer-placeholder"></footer>
+    <div id="fabs-placeholder"></div>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="blog-data.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Initialize AOS
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true,
+            });
+
+            // Lazy loading images
+            const lazyImages = document.querySelectorAll('.lazy-load');
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.src;
+                        img.classList.add('loaded');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            lazyImages.forEach(img => imageObserver.observe(img));
+
+            // FAQ Accordion
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    const currentlyActive = document.querySelector('.faq-item.active');
+                    if (currentlyActive && currentlyActive !== item) {
+                        currentlyActive.classList.remove('active');
+                        currentlyActive.querySelector('.faq-answer').style.maxHeight = 0;
+                    }
+                    item.classList.toggle('active');
+                    const answer = item.querySelector('.faq-answer');
+                    if(item.classList.contains('active')){
+                        answer.style.maxHeight = answer.scrollHeight + "px";
+                    } else {
+                        answer.style.maxHeight = 0;
+                    }
+                });
+            });
+
+            // Form validation
+            const trialForm = document.getElementById('trial-form');
+            if (trialForm) {
+                trialForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const submitBtn = document.getElementById('submit-btn');
+                    const loadingSpinner = document.getElementById('loading-spinner');
+                    
+                    // Show loading state
+                    submitBtn.style.display = 'none';
+                    loadingSpinner.style.display = 'block';
+                    
+                    // Simulate form submission
+                    setTimeout(() => {
+                        trialForm.submit();
+                    }, 1000);
+                });
+            }
+
+            // Blog Previews - الكود المحسن مع إصلاح الروابط
+            const blogPreviewsContainer = document.getElementById('blog-previews');
+            if (blogPreviewsContainer && typeof allPosts !== 'undefined') {
+                const shuffledPosts = [...allPosts].sort(() => 0.5 - Math.random());
+                const selectedPosts = shuffledPosts.slice(0, 3);
+                let content = '';
+                
+                selectedPosts.forEach(post => {
+                    content += `
+                        <div class="blog-preview-card">
+                            <a href="${post.link}">
+                                <img src="${post.image}" 
+                                     alt="${post.alt}" 
+                                     class="blog-preview-image lazy-load" 
+                                     loading="lazy"
+                                     onerror="this.classList.add('error'); this.innerHTML='Image not available'"
+                                     onload="this.classList.remove('loading')">
+                            </a>
+                            <div class="blog-preview-content">
+                                <h3><a href="${post.link}">${post.title}</a></h3>
+                                <p>${post.excerpt}</p>
+                                <a href="${post.link}" class="read-more-link">Read More &rarr;</a>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                blogPreviewsContainer.innerHTML = content;
+
+                // تهيئة Lazy Loading للصور بعد إضافتها
+                const blogLazyImages = blogPreviewsContainer.querySelectorAll('.lazy-load');
+                if ('IntersectionObserver' in window) {
+                    const blogImageObserver = new IntersectionObserver((entries, observer) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                const img = entry.target;
+                                img.src = img.src;
+                                img.classList.add('loaded');
+                                blogImageObserver.unobserve(img);
+                            }
+                        });
+                    }, { threshold: 0.5 });
+
+                    blogLazyImages.forEach(img => {
+                        img.classList.add('loading');
+                        blogImageObserver.observe(img);
+                    });
+                } else {
+                    // Fallback للمتصفحات التي لا تدعم IntersectionObserver
+                    blogLazyImages.forEach(img => {
+                        img.classList.remove('loading');
+                    });
+                }
+            } else {
+                // رسالة بديلة إذا لم يتم تحميل المقالات
+                blogPreviewsContainer.innerHTML = `
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 40px;">
+                        <p>Blog posts are loading...</p>
+                        <a href="blog.html" class="btn btn-primary">Visit Our Blog</a>
+                    </div>
+                `;
+            }
+        });
+    </script>
+</body>
+</html>

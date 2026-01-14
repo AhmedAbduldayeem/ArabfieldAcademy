@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Programs - Arabfield Academy</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/logo.jpg" type="image/jpeg">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Our Programs - Arabfield Academy">
+    <meta property="og:description" content="Discover comprehensive Arabic programs: Modern Standard Arabic, Egyptian Colloquial, Quranic Arabic, Business Arabic, and more with native tutors.">
+    <meta property="og:image" content="https://arabfieldacademy.netlify.app/images/social-preview.jpg">
+    <meta property="og:url" content="https://arabfieldacademy.netlify.app/programs.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Arabfield Academy">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Our Programs - Arabfield Academy">
+    <meta name="twitter:description" content="Discover comprehensive Arabic programs with native tutors. Modern Standard, Egyptian Colloquial, Quranic, Business Arabic and more.">
+    <meta name="twitter:image" content="https://arabfieldacademy.netlify.app/images/social-preview.jpg">
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* --- Styles for the Programs Page --- */
+        .program-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr )); gap: 30px; }
+        .program-card { background-color: var(--card-background); border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.07); padding: 30px; border: 1px solid var(--border-color); display: flex; flex-direction: column; transition: transform 0.3s, box-shadow 0.3s; }
+        .program-card:hover { transform: translateY(-8px); box-shadow: 0 10px 25px rgba(0,0,0,0.12); }
+        .program-card .card-icon { 
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin: 0 auto 15px;
+            display: block;
+        }
+        .program-card h3 { font-size: 24px; color: var(--primary-blue); margin-bottom: 15px; }
+        .program-card p { color: #555; line-height: 1.7; flex-grow: 1; margin-bottom: 20px; }
+        .program-card .btn { margin-top: auto; align-self: center; }
+        .learn-list { list-style: none; padding: 0; text-align: left; margin-top: 20px; flex-grow: 1; }
+        .learn-list li { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; color: #333; }
+        .learn-list .tick-icon { color: var(--secondary-orange); font-weight: bold; margin-top: 4px; }
+
+        .recommender-section { background-color: var(--very-light-blue); padding: 60px 20px; text-align: center; }
+        .recommender-section h2 { font-size: 32px; color: var(--primary-blue); margin-top: 0; margin-bottom: 15px; }
+        .recommender-section p { font-size: 18px; color: #555; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .filter-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
+        .filter-btn { background-color: white; color: var(--primary-blue); border: 2px solid var(--border-color); padding: 12px 25px; border-radius: 25px; font-size: 16px; font-weight: bold; cursor: pointer; transition: all 0.3s; }
+        .filter-btn:hover { background-color: var(--light-blue); border-color: var(--primary-blue); }
+        .filter-btn.active { background-color: var(--secondary-orange); color: white; border-color: var(--secondary-orange); transform: scale(1.05); }
+        
+        .pathways-section { background-color: var(--very-light-blue); }
+        .pathways-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 30px; margin-top: 50px; }
+        .pathway-card { background-color: var(--card-background); border-radius: 12px; border: 1px solid var(--border-color); padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.07); }
+        .pathway-card h3 { font-size: 24px; color: var(--primary-blue); margin-top: 0; margin-bottom: 10px; display: flex; align-items: center; gap: 15px; }
+        .pathway-card h3 .icon { font-size: 36px; color: var(--secondary-orange); }
+        .pathway-card .description { color: #555; margin-bottom: 25px; border-bottom: 1px solid var(--border-color); padding-bottom: 20px; }
+        .pathway-steps { list-style: none; padding: 0; counter-reset: step-counter; }
+        .pathway-step { position: relative; padding-left: 45px; margin-bottom: 20px; }
+        .pathway-step::before { counter-increment: step-counter; content: counter(step-counter); position: absolute; left: 0; top: 0; width: 30px; height: 30px; background-color: var(--secondary-orange); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 16px; }
+        .pathway-step strong { display: block; font-size: 18px; color: var(--primary-blue); }
+        .pathway-step span { font-size: 15px; color: #777; }
+        
+        .about-layout { display: grid; grid-template-columns: 1fr; gap: 50px; align-items: center; }
+        @media (min-width: 992px) { .about-layout { grid-template-columns: 1fr 1fr; } }
+        .about-content h2 { font-size: 36px; color: var(--primary-blue); margin-bottom: 20px; text-align: left; }
+        .about-content p { font-size: 18px; line-height: 1.8; color: #555; }
+        .about-image video { width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+    </style>
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <header class="main-header" id="main-header-placeholder"></header>
+
+    <section class="hero-section">
+        <h1 data-aos="fade-down">Find Your Path to Arabic Fluency</h1>
+        <p data-aos="fade-up" data-aos-delay="200">Plant the language, Harvest the culture</p>
+    </section>
+
+    <section class="recommender-section">
+        <div class="container" data-aos="fade-up">
+            <h2>Find Your Perfect Program</h2>
+            <p>What is your main goal for learning Arabic? Select an option below to see our top recommendations for you.</p>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Programs</button>
+                <button class="filter-btn" data-filter="conversation">Daily Conversation</button>
+                <button class="filter-btn" data-filter="professional">Professional / Academic</button>
+                <button class="filter-btn" data-filter="spiritual">Quran / Spiritual</button>
+                <button class="filter-btn" data-filter="kids">For Kids</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="program-grid">
+                <div class="program-card" data-category="professional,conversation" data-aos="fade-up" data-aos-delay="100">
+                    <img src="images/program-msa.jpg" alt="Modern Standard Arabic" class="card-icon">
+                    <h3>Modern Standard Arabic (MSA)</h3>
+                    <p>The universal language of media, literature, and formal settings. Essential for academic, professional, and pan-Arab communication.</p>
+                    <ul class="learn-list">
+                        <li><span class="tick-icon">✓</span> Read news, books, and official documents.</li>
+                        <li><span class="tick-icon">✓</span> Understand formal speeches and news broadcasts.</li>
+                        <li><span class="tick-icon">✓</span> Build a strong foundation for learning any dialect.</li>
+                    </ul>
+                    <a href="pricing.html" class="btn btn-primary">View Plans</a>
+                </div>
+                <div class="program-card" data-category="conversation" data-aos="fade-up" data-aos-delay="200">
+                    <img src="images/program-egyptian.jpg" alt="Egyptian Colloquial Arabic" class="card-icon">
+                    <h3>Egyptian Colloquial Arabic</h3>
+                    <p>The most widely understood dialect, thanks to Egypt's rich history in cinema and music. Perfect for daily life, travel, and connecting with people.</p>
+                    <ul class="learn-list">
+                        <li><span class="tick-icon">✓</span> Chat with locals and make friends in Egypt.</li>
+                        <li><span class="tick-icon">✓</span> Understand popular movies, series, and songs.</li>
+                        <li><span class="tick-icon">✓</span> Navigate daily situations like shopping and ordering food.</li>
+                    </ul>
+                    <a href="pricing.html" class="btn btn-primary">View Plans</a>
+                </div>
+                <div class="program-card" data-category="conversation" data-aos="fade-up" data-aos-delay="300">
+                    <img src="images/program-travel.jpg" alt="Arabic for Travelers" class="card-icon">
+                    <h3>Arabic for Travelers</h3>
+                    <p>A short, intensive "survival" course focused on practical phrases and cultural tips for your next trip to an Arabic-speaking country.</p>
+                    <ul class="learn-list">
+                        <li><span class="tick-icon">✓</span> Learn greetings, introductions, and basic etiquette.</li>
+                        <li><span class="tick-icon">✓</span> Practice ordering food, asking for directions, and shopping.</li>
+                        <li><span class="tick-icon">✓</span> Gain confidence to interact during your travels.</li>
+                    </ul>
+                    <a href="pricing.html" class="btn btn-primary">View Plans</a>
+                </div>
+                <div class="program-card" id="program-quranic" data-category="spiritual" data-aos="fade-up" data-aos-delay="100">
+                    <img src="images/program-quran.jpg" alt="Quranic & Classical Arabic" class="card-icon">
+                    <h3>Quranic & Classical Arabic</h3>
+                    <p>Embark on a spiritual and intellectual journey to understand the Quran, Hadith, and classical Islamic texts in their original, eloquent form.</p>
+                    <ul class="learn-list">
+                        <li><span class="tick-icon">✓</span> Read and comprehend the Holy Quran directly.</li>
+                        <li><span class="tick-icon">✓</span> Study classical Islamic literature and poetry.</li>
+                        <li><span class="tick-icon">✓</span> Deepen your connection to your faith and heritage.</li>
+                    </ul>
+                    <a href="pricing.html" class="btn btn-primary">View Plans</a>
+                </div>
+                <div class="program-card" data-category="professional" data-aos="fade-up" data-aos-delay="200">
+                    <img src="images/program-business.jpg" alt="Arabic for Business" class="card-icon">
+                    <h3>Arabic for Business</h3>
+                    <p>Gain a competitive edge with a curriculum focused on the language of diplomacy, trade, and finance in the Middle East and North Africa.</p>
+                    <ul class="learn-list">
+                        <li><span class="tick-icon">✓</span> Master professional email and report writing.</li>
+                        <li><span class="tick-icon">✓</span> Participate confidently in meetings and negotiations.</li>
+                        <li><span class="tick-icon">✓</span> Understand the cultural nuances of Arab business etiquette.</li>
+                    </ul>
+                    <a href="pricing.html" class="btn btn-primary">View Plans</a>
+                </div>
+                <div class="program-card" id="program-kids" data-category="kids" data-aos="fade-up" data-aos-delay="300">
+                    <img src="images/program-kids.jpg" alt="Arabic for Kids" class="card-icon">
+                    <h3>Arabic for Kids</h3>
+                    <p>Engaging, fun, and interactive lessons designed to spark a lifelong love for the Arabic language in young learners through games, songs, and stories.</p>
+                    <ul class="learn-list">
+                        <li><span class="tick-icon">✓</span> Learn the alphabet and basic vocabulary through play.</li>
+                        <li><span class="tick-icon">✓</span> Develop listening and speaking skills with fun activities.</li>
+                        <li><span class="tick-icon">✓</span> Build a positive and joyful connection to the language.</li>
+                    </ul>
+                    <a href="pricing.html" class="btn btn-primary">View Plans</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background-color: var(--very-light-blue);">
+        <div class="container">
+            <div class="about-layout">
+                <div class="about-content" data-aos="fade-right">
+                    <h2 class="section-title">Cultural Immersion Program</h2>
+                    <p>Why just visit Egypt when you can <strong>live it</strong>? Our exclusive Cultural Immersion Program is more than a tour; it's your backstage pass to the heart of Egyptian culture, with an expert teacher as your guide.</p>
+                    <p>This is where language truly comes to life. Haggle in the market, order coffee like a local, and share stories with people you meet, all while receiving instant corrections and cultural insights that no guidebook can offer.</p>
+                    <a href="https://wa.me/2001508601333?text=I'm%20excited%20about%20the%20Cultural%20Immersion%20Program!%20Tell%20me%20more." target="_blank" class="btn btn-primary" style="margin-top: 20px;">Start Your Adventure</a>
+                </div>
+                <div class="about-image" data-aos="fade-left">
+                    <video autoplay loop muted playsinline>
+                        <source src="images/Egypt.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section pathways-section">
+        <h2 class="section-title" data-aos="fade-up">Recommended Learning Pathways</h2>
+        <div class="container pathways-grid">
+            <div class="pathway-card" data-aos="fade-up" data-aos-delay="100">
+                <h3><span class="icon">💬</span> The Social Communicator</h3>
+                <p class="description">For those who want to connect with people, make friends, and enjoy daily life in the Arab world.</p>
+                <ol class="pathway-steps">
+                    <li class="pathway-step"><strong>Foundation in MSA</strong><span>Build a strong grammatical base.</span></li>
+                    <li class="pathway-step"><strong>Specialize in a Dialect</strong><span>Choose Egyptian or Levantine for wide understanding.</span></li>
+                    <li class="pathway-step"><strong>Achieve Fluency</strong><span>Converse confidently in everyday situations.</span></li>
+                </ol>
+            </div>
+            <div class="pathway-card" data-aos="fade-up" data-aos-delay="200">
+                <h3><span class="icon">📈</span> The Dedicated Professional</h3>
+                <p class="description">For academics, researchers, and business professionals who need to read, write, and communicate formally.</p>
+                <ol class="pathway-steps">
+                    <li class="pathway-step"><strong>Master MSA</strong><span>The language of business, academia, and media.</span></li>
+                    <li class="pathway-step"><strong>Advanced Studies</strong><span>Dive into Media Arabic or Business Arabic.</span></li>
+                    <li class="pathway-step"><strong>Gain Expertise</strong><span>Engage with complex texts and professional discussions.</span></li>
+                </ol>
+            </div>
+            <div class="pathway-card" data-aos="fade-up" data-aos-delay="300">
+                <h3><span class="icon">🌙</span> The Spiritual Seeker</h3>
+                <p class="description">For those who wish to understand the Quran and classical Islamic texts in their original, eloquent form.</p>
+                <ol class="pathway-steps">
+                    <li class="pathway-step"><strong>Start with the Source</strong><span>Focus on Quranic & Classical Arabic.</span></li>
+                    <li class="pathway-step"><strong>Strengthen Grammar</strong><span>Use MSA to solidify your understanding of complex structures.</span></li>
+                    <li class="pathway-step"><strong>Deepen Connection</strong><span>Read and appreciate sacred texts without translation.</span></li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer" id="main-footer-placeholder"></footer>
+    <div id="fabs-placeholder"></div>
+    <div id="modal-placeholder"></div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true
+      } );
+    </script>
+</body>
+</html>

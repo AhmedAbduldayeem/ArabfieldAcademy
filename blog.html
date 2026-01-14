@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Arabfield Academy</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="images/logo.jpg">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Blog - Arabfield Academy">
+    <meta property="og:description" content="Explore our Arabic learning blog with tips, culture insights, grammar guides, and student success stories. Enhance your Arabic journey with expert content.">
+    <meta property="og:image" content="https://arabfieldacademy.netlify.app/images/social-preview.jpg">
+    <meta property="og:url" content="https://arabfieldacademy.netlify.app/blog.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Arabfield Academy">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Blog - Arabfield Academy">
+    <meta name="twitter:description" content="Explore our Arabic learning blog with tips, culture insights, grammar guides, and student success stories.">
+    <meta name="twitter:image" content="https://arabfieldacademy.netlify.app/images/social-preview.jpg">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* 🔥 Hero Section for Blog - متطابق مع باقي الصفحات */
+        .blog-hero-section {
+            padding: 80px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            background-color: var(--primary-blue);
+        }
+        .blog-hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url(images/about-hero-bg.jpg);
+            background-size: cover;
+            background-position: center;
+            z-index: -2;
+        }
+        .blog-hero-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(10, 77, 104, .7);
+            z-index: -1;
+        }
+        .blog-hero-section h1 {
+            font-size: 48px;
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+        .blog-hero-section p {
+            font-size: 20px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 30px;
+            color: rgba(255, 255, 255, .9);
+        }
+
+        .blog-layout { display: grid; grid-template-columns: 1fr; gap: 40px; }
+        @media (min-width: 992px) { .blog-layout { grid-template-columns: 280px 1fr; } }
+        
+        .blog-sidebar h3 { font-size: 22px; color: var(--primary-blue); margin-bottom: 20px; border-bottom: 2px solid var(--border-color); padding-bottom: 10px; }
+        .blog-sidebar ul { list-style: none; padding: 0; }
+        .blog-sidebar li a { text-decoration: none; color: #555; display: block; padding: 10px 15px; border-radius: 6px; transition: background-color 0.3s, color 0.3s; }
+        .blog-sidebar li a:hover, .blog-sidebar li a.active { background-color: var(--light-blue); color: var(--primary-blue); font-weight: bold; }
+        
+        .blog-main-content { display: flex; flex-direction: column; gap: 40px; }
+        .latest-posts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .blog-post-card { background-color: var(--card-background); border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.07); overflow: hidden; display: flex; flex-direction: column; transition: transform 0.3s, box-shadow 0.3s; }
+        .blog-post-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+        .blog-post-card .blog-post-image { width: 100%; height: 220px; object-fit: cover; }
+        .blog-post-card .blog-post-info { padding: 25px; display: flex; flex-direction: column; flex-grow: 1; }
+        .blog-category { background-color: var(--light-blue); color: var(--primary-blue); padding: 5px 12px; border-radius: 20px; font-size: 13px; font-weight: bold; margin-bottom: 15px; align-self: flex-start; }
+        .blog-post-info h2 { margin: 0 0 10px 0; font-size: 20px; }
+        .blog-post-info h2 a { text-decoration: none; color: var(--primary-blue); }
+        .blog-post-info p { color: #555; line-height: 1.7; flex-grow: 1; margin-bottom: 20px; }
+        .blog-date { font-size: 14px; color: #777; }
+    </style>
+    
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <header class="main-header" id="main-header-placeholder"></header>
+
+    <!-- 🔥 Hero Section for Blog -->
+    <section class="blog-hero-section">
+        <h1 id="blog-hero-title">Arabfield Academy Blog</h1>
+        <p>Plant the language, Harvest the culture</p>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <!-- ✅ إزالة العنوان المكرر -->
+            <div class="blog-layout">
+                <aside class="blog-sidebar">
+                    <h3>Categories</h3>
+                    <ul id="category-list">
+                        <li><a href="blog.html" data-category="all">All Posts</a></li>
+                        <li><a href="blog.html?category=Learning%20Tips" data-category="Learning Tips">Learning Tips</a></li>
+                        <li><a href="blog.html?category=Culture%20and%20History" data-category="Culture and History">Culture and History</a></li>
+                        <li><a href="blog.html?category=Grammar%20Guides" data-category="Grammar Guides">Grammar Guides</a></li>
+                        <li><a href="blog.html?category=Student%20Stories" data-category="Student Stories">Student Stories</a></li>
+                    </ul>
+                </aside>
+                <main class="blog-main-content">
+                    <div id="blog-grid"></div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer" id="main-footer-placeholder"></footer>
+    <div class="fab-container" id="fabs-placeholder"></div>
+    <div id="modal-placeholder"></div>
+
+    <script src="blog-data.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // انتظر قليلاً للتأكد من أن app.js قد بنى الهيكل
+            setTimeout(() => {
+                const blogGrid = document.getElementById('blog-grid');
+                const blogHeroTitle = document.getElementById('blog-hero-title'); // ✅ التصحيح
+                const categoryList = document.getElementById('category-list');
+
+                if (!blogGrid || !blogHeroTitle || !categoryList) return;
+
+                function renderPosts(posts) {
+                    if (!posts || posts.length === 0) {
+                        blogGrid.innerHTML = '<p>No articles found.</p>';
+                        return;
+                    }
+                    posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+                    const postsHTML = posts.map(post => `
+                        <article class="blog-post-card">
+                            <a href="${post.link}"><img loading="lazy" src="${post.image}" alt="${post.alt}" class="blog-post-image"></a>
+                            <div class="blog-post-info">
+                                <span class="blog-category">${post.category}</span>
+                                <h2><a href="${post.link}">${post.title}</a></h2>
+                                <p>${post.excerpt}</p>
+                                <span class="blog-date">${new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+                            </div>
+                        </article>
+                    `).join('');
+                    blogGrid.innerHTML = `<div class="latest-posts-grid">${postsHTML}</div>`;
+                }
+
+                function filterAndDisplay() {
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const category = urlParams.get('category');
+                    const cleanCategory = category ? decodeURIComponent(category).trim() : 'all';
+
+                    let postsToShow = (cleanCategory === 'all')
+                        ? allPosts
+                        : allPosts.filter(post => post.category.trim() === cleanCategory);
+
+                    // ✅ تحديث عنوان الهيرو حسب التصنيف
+                    blogHeroTitle.textContent = (cleanCategory === 'all') 
+                        ? 'Arabfield Academy Blog' 
+                        : `${cleanCategory}`;
+
+                    renderPosts(postsToShow);
+
+                    document.querySelectorAll('#category-list a').forEach(link => {
+                        link.classList.toggle('active', link.dataset.category === cleanCategory);
+                    });
+                }
+
+                categoryList.addEventListener('click', function(event) {
+                    const link = event.target.closest('a');
+                    if (link) {
+                        event.preventDefault();
+                        const category = link.dataset.category;
+                        const url = category === 'all' ? 'blog.html' : `blog.html?category=${encodeURIComponent(category)}`;
+                        history.pushState({category: category}, '', url);
+                        filterAndDisplay();
+                    }
+                });
+
+                filterAndDisplay();
+                window.addEventListener('popstate', filterAndDisplay);
+            }, 100); // ✅ زيادة التأخير قليلاً لضمان تحميل app.js
+        });
+    </script>
+</body>
+</html>
