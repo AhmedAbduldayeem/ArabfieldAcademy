@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arabfield Academy Blog</title>
+    
+    <!-- Meta Tags سيتم تعبئتها ديناميكياً -->
+    <meta name="description" id="meta-description" content="Discover insightful articles about Arabic language learning, culture, and tips from Arabfield Academy experts.">
+    <meta name="keywords" id="meta-keywords" content="arabic learning, arabic culture, language tips, arabfield academy">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Arabfield Academy">
+    <meta property="og:title" id="og-title" content="Arabfield Academy Blog">
+    <meta property="og:description" id="og-description" content="Discover insightful articles about Arabic language learning, culture, and tips from Arabfield Academy experts.">
+    <meta property="og:image" id="og-image" content="../images/Logo.jpg">
+    <meta property="og:url" id="og-url">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" id="twitter-title" content="Arabfield Academy Blog">
+    <meta name="twitter:description" id="twitter-description" content="Discover insightful articles about Arabic language learning, culture, and tips from Arabfield Academy experts.">
+    <meta name="twitter:image" id="twitter-image" content="../images/Logo.jpg">
+    
+    <!-- Preload Critical Images -->
+    <link rel="preload" href="../images/Logo.jpg" as="image">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json" id="structured-data">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Arabfield Academy Blog",
+        "description": "Discover insightful articles about Arabic language learning, culture, and tips from Arabfield Academy experts.",
+        "image": "../images/Logo.jpg",
+        "author": {
+            "@type": "Organization",
+            "name": "Arabfield Academy"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Arabfield Academy",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "../images/Logo.jpg"
+            }
+        },
+        "datePublished": "",
+        "dateModified": ""
+    }
+    </script>
+
+    <!-- The path to the stylesheet is corrected to go up one level -->
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* --- Post Page Specific Styles --- */
+        .post-layout { 
+            display: grid; 
+            grid-template-columns: 1fr; 
+            gap: 40px; 
+            /* 🔥 NEW: Smooth layout transition */
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .post-layout.loaded {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @media (min-width: 992px) { 
+            .post-layout { 
+                grid-template-columns: 1fr 300px; 
+            } 
+        }
+        
+        .post-content { 
+            line-height: 1.8; 
+            font-size: 17px; 
+            /* 🔥 NEW: Smooth content reveal */
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+        
+        .post-content h1, .post-content h2, .post-content h3 { 
+            color: var(--primary-blue); 
+            /* 🔥 NEW: Smooth heading transitions */
+            transition: color 0.3s ease;
+        }
+        .post-content h2:hover, .post-content h3:hover {
+            color: var(--secondary-orange);
+        }
+        
+        .post-main-image { 
+            width: 100%; 
+            border-radius: 12px; 
+            margin-bottom: 20px; 
+            background-color: #f8f9fa;
+            min-height: 300px;
+            /* 🔥 NEW: Enhanced image transitions */
+            transform: scale(0.98);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .post-main-image:hover {
+            transform: scale(1.01);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .post-meta { 
+            color: #777; 
+            margin-bottom: 30px; 
+            /* 🔥 NEW: Smooth meta fade in */
+            animation: fadeIn 0.6s ease 0.4s both;
+        }
+        
+        .post-sidebar { 
+            position: sticky; 
+            top: 100px; 
+            /* 🔥 NEW: Smooth sidebar entrance */
+            animation: fadeInRight 0.8s ease 0.3s both;
+        }
+        
+        .sidebar-widget { 
+            background-color: var(--very-light-blue); 
+            padding: 25px; 
+            border-radius: 12px; 
+            margin-bottom: 30px; 
+            /* 🔥 NEW: Enhanced widget transitions */
+            transform: translateX(-10px);
+            opacity: 0;
+            animation: fadeInRight 0.6s ease 0.5s both;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .sidebar-widget:nth-child(2) { animation-delay: 0.7s; }
+        .sidebar-widget:nth-child(3) { animation-delay: 0.9s; }
+        .sidebar-widget:hover {
+            transform: translateX(0);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .sidebar-widget h3 { 
+            margin-top: 0; 
+            color: var(--primary-blue); 
+            border-bottom: 2px solid var(--border-color); 
+            padding-bottom: 10px; 
+            margin-bottom: 15px;
+            transition: color 0.3s ease;
+        }
+        .sidebar-widget:hover h3 {
+            color: var(--secondary-orange);
+        }
+        
+        .related-posts-list a { 
+            display: block; 
+            padding: 12px 0; 
+            text-decoration: none; 
+            color: #333; 
+            font-weight: bold; 
+            border-bottom: 1px solid var(--border-color); 
+            transition: all 0.3s ease; 
+            transform: translateX(0);
+            position: relative;
+            overflow: hidden;
+        }
+        .related-posts-list a:before {
+            content: '';
+            position: absolute;
+            left: -100%;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(245, 124, 0, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+        .related-posts-list a:hover:before {
+            left: 100%;
+        }
+        .related-posts-list a:hover { 
+            color: var(--secondary-orange); 
+            transform: translateX(8px);
+            padding-left: 8px;
+        }
+        .related-posts-list a:last-child { border-bottom: none; }
+        
+        .cta-box { 
+            margin: 60px 0; 
+            padding: 40px; 
+            background-color: var(--light-blue); 
+            border-radius: 12px; 
+            text-align: center; 
+            border: 2px dashed var(--secondary-orange);
+            /* 🔥 NEW: Pulse animation for CTA */
+            animation: fadeInUp 0.8s ease 0.6s both, pulse 2s ease-in-out 2s 3;
+        }
+        .cta-box h3 { 
+            color: var(--primary-blue); 
+            margin-top: 0; 
+            font-size: 28px; 
+            transition: color 0.3s ease;
+        }
+        .cta-box:hover h3 {
+            color: var(--secondary-orange);
+        }
+        .cta-box p { 
+            color: #555; 
+            font-size: 18px; 
+            margin-bottom: 25px; 
+        }
+
+        .share-buttons { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 10px; 
+            text-align: center; 
+        }
+        .share-btn { 
+            display: inline-flex; 
+            align-items: center; 
+            justify-content: center; 
+            gap: 8px; 
+            text-decoration: none; 
+            padding: 12px 15px; 
+            border-radius: 8px; 
+            font-size: 15px; 
+            font-weight: bold; 
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+            border: 2px solid var(--border-color); 
+            background-color: transparent; 
+            color: var(--primary-blue); 
+            position: relative;
+            overflow: hidden;
+        }
+        .share-btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.6s ease;
+        }
+        .share-btn:hover:before {
+            left: 100%;
+        }
+        .share-btn svg { 
+            width: 18px; 
+            height: 18px; 
+            fill: currentColor; 
+            transition: transform 0.3s ease;
+        }
+        .share-btn:hover { 
+            background-color: var(--secondary-orange); 
+            color: white; 
+            border-color: var(--secondary-orange); 
+            transform: translateY(-3px) scale(1.05); 
+            box-shadow: 0 6px 15px rgba(245, 124, 0, 0.4); 
+        }
+        .share-btn:hover svg {
+            transform: scale(1.2);
+        }
+
+        /* Post Navigation Styles */
+        .post-navigation { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            margin: 60px 0; 
+            padding: 30px 0; 
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            gap: 20px;
+            /* 🔥 NEW: Smooth navigation entrance */
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+        .nav-btn { 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
+            padding: 15px 20px; 
+            background-color: var(--very-light-blue); 
+            border: 1px solid var(--border-color); 
+            border-radius: 8px; 
+            text-decoration: none; 
+            color: var(--primary-blue); 
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+            max-width: 45%; 
+            position: relative;
+            overflow: hidden;
+        }
+        .nav-btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(245, 124, 0, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+        .nav-btn:hover:before {
+            left: 100%;
+        }
+        .nav-btn:hover { 
+            background-color: var(--light-blue); 
+            transform: translateY(-3px) scale(1.02); 
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15); 
+        }
+        .nav-btn.prev { text-align: left; }
+        .nav-btn.next { text-align: right; flex-direction: row-reverse; }
+        .nav-btn .arrow { 
+            font-size: 18px; 
+            font-weight: bold; 
+            transition: transform 0.3s ease;
+        }
+        .nav-btn:hover .arrow {
+            transform: scale(1.3);
+        }
+        .nav-btn .nav-text { display: flex; flex-direction: column; }
+        .nav-btn .nav-label { font-size: 12px; color: #777; margin-bottom: 5px; }
+        .nav-btn .nav-title { font-size: 14px; font-weight: bold; line-height: 1.3; }
+        .nav-btn.disabled { opacity: 0.5; pointer-events: none; background-color: #f8f9fa; }
+
+        /* Lazy loading styles */
+        .lazy-image {
+            opacity: 0;
+            transition: opacity 0.6s ease-in-out;
+        }
+        .lazy-image.loaded {
+            opacity: 1;
+        }
+        .image-placeholder {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        /* 🔥 NEW: Smooth Animation Keyframes */
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0; 
+                transform: translateY(30px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+        
+        @keyframes fadeInRight {
+            from { 
+                opacity: 0; 
+                transform: translateX(-20px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateX(0); 
+            }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+
+        /* 🔥 NEW: Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* 🔥 NEW: Back to top button enhancement */
+        .scroll-top-btn {
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .scroll-top-btn:hover {
+            transform: scale(1.1) translateY(-3px);
+        }
+
+        /* 🔥 NEW: Smooth focus transitions for accessibility */
+        a:focus, button:focus {
+            outline: 2px solid var(--secondary-orange);
+            outline-offset: 2px;
+            transition: outline-color 0.3s ease;
+        }
+    </style>
+    <!-- The path to app.js is corrected to go up one level -->
+    <script src="../app.js" defer></script>
+</head>
+<body>
+    <header class="main-header" id="main-header-placeholder"></header>
+
+    <section class="section">
+        <div class="container">
+            <div class="post-layout" id="post-layout">
+                <main class="post-content" id="post-content-area"><p>Loading article...</p></main>
+                
+                <aside class="post-sidebar" id="post-sidebar-container">
+                    <!-- Sidebar content will be dynamically generated -->
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer" id="main-footer-placeholder"></footer>
+    <div class="fab-container" id="fabs-placeholder"></div>
+    <div id="modal-placeholder"></div>
+
+    <!-- The path to blog-data.js is corrected to go up one level -->
+    <script src="../blog-data.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const postContentArea = document.getElementById('post-content-area');
+            const postSidebarContainer = document.getElementById('post-sidebar-container');
+            const postLayout = document.getElementById('post-layout');
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const postId = urlParams.get('id');
+
+            // Image optimization functions
+            function loadImage(img) {
+                const src = img.getAttribute('data-src');
+                if (!src) return;
+                
+                const image = new Image();
+                image.onload = function() {
+                    img.src = src;
+                    img.classList.remove('lazy-image', 'image-placeholder');
+                    img.classList.add('loaded');
+                };
+                image.onerror = function() {
+                    img.classList.remove('image-placeholder');
+                    console.warn('Failed to load image:', src);
+                };
+                image.src = src;
+            }
+
+            function initLazyLoading() {
+                const lazyImages = document.querySelectorAll('img[data-src]');
+                const imageObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            loadImage(entry.target);
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                });
+
+                lazyImages.forEach(img => {
+                    imageObserver.observe(img);
+                });
+            }
+
+            if (postId && typeof allPosts !== 'undefined') {
+                const postData = allPosts.find(p => p.id === postId);
+                if (postData) {
+                    // SEO OPTIMIZATION: Update all meta tags dynamically
+                    document.title = `${postData.title} - Arabfield Academy Blog`;
+                    
+                    // Update Meta Description
+                    const metaDescription = document.getElementById('meta-description');
+                    metaDescription.content = postData.excerpt || `Learn about ${postData.title} with Arabfield Academy. ${postData.excerpt}`;
+                    
+                    // Update Meta Keywords
+                    const metaKeywords = document.getElementById('meta-keywords');
+                    metaKeywords.content = `arabic learning, ${postData.category.toLowerCase()}, ${postData.title}, arabfield academy`;
+                    
+                    // Update Open Graph Tags
+                    const ogTitle = document.getElementById('og-title');
+                    const ogDescription = document.getElementById('og-description');
+                    const ogImage = document.getElementById('og-image');
+                    const ogUrl = document.getElementById('og-url');
+                    
+                    ogTitle.content = postData.title;
+                    ogDescription.content = postData.excerpt;
+                    ogImage.content = `../${postData.image}`;
+                    ogUrl.content = window.location.href;
+                    
+                    // Update Twitter Card Tags
+                    document.getElementById('twitter-title').content = postData.title;
+                    document.getElementById('twitter-description').content = postData.excerpt;
+                    document.getElementById('twitter-image').content = `../${postData.image}`;
+                    
+                    // Update Structured Data
+                    const structuredData = document.getElementById('structured-data');
+                    const schema = {
+                        "@context": "https://schema.org",
+                        "@type": "BlogPosting",
+                        "headline": postData.title,
+                        "description": postData.excerpt,
+                        "image": `../${postData.image}`,
+                        "author": {
+                            "@type": "Organization",
+                            "name": "Arabfield Academy"
+                        },
+                        "publisher": {
+                            "@type": "Organization",
+                            "name": "Arabfield Academy",
+                            "logo": {
+                                "@type": "ImageObject",
+                                "url": "../images/Logo.jpg"
+                            }
+                        },
+                        "datePublished": postData.date,
+                        "dateModified": postData.date,
+                        "mainEntityOfPage": {
+                            "@type": "WebPage",
+                            "@id": window.location.href
+                        },
+                        "articleSection": postData.category,
+                        "keywords": postData.category
+                    };
+                    structuredData.textContent = JSON.stringify(schema);
+
+                    // Calculate Previous and Next Posts
+                    const currentIndex = allPosts.findIndex(p => p.id === postId);
+                    const prevPost = currentIndex > 0 ? allPosts[currentIndex - 1] : null;
+                    const nextPost = currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : null;
+
+                    // Create Navigation HTML
+                    const navigationHTML = `
+                        <div class="post-navigation">
+                            ${prevPost ? `
+                                <a href="post-template.html?id=${prevPost.id}" class="nav-btn prev">
+                                    <span class="arrow">←</span>
+                                    <div class="nav-text">
+                                        <span class="nav-label">Previous Article</span>
+                                        <span class="nav-title">${prevPost.title}</span>
+                                    </div>
+                                </a>
+                            ` : '<div class="nav-btn prev disabled"><span class="nav-label">No Previous Articles</span></div>'}
+                            
+                            ${nextPost ? `
+                                <a href="post-template.html?id=${nextPost.id}" class="nav-btn next">
+                                    <div class="nav-text">
+                                        <span class="nav-label">Next Article</span>
+                                        <span class="nav-title">${nextPost.title}</span>
+                                    </div>
+                                    <span class="arrow">→</span>
+                                </a>
+                            ` : '<div class="nav-btn next disabled"><span class="nav-label">No More Articles</span></div>'}
+                        </div>
+                    `;
+
+                    // The fetch path is relative to this HTML file, so 'content/' is correct.
+                    fetch(`content/${postId}.html`)
+                        .then(response => {
+                            if (!response.ok) {
+                                return Promise.reject('Content file not found');
+                            }
+                            return response.text();
+                        })
+                        .then(htmlContent => {
+                            // Use lazy loading for main image
+                            const mainImageHTML = `
+                                <img 
+                                    data-src="../${postData.image}" 
+                                    alt="${postData.alt}" 
+                                    class="post-main-image lazy-image image-placeholder"
+                                    loading="lazy"
+                                >
+                            `;
+
+                            postContentArea.innerHTML = `
+                                <h1>${postData.title}</h1>
+                                <p class="post-meta">Published on ${new Date(postData.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} | Category: ${postData.category}</p>
+                                
+                                ${mainImageHTML}
+                                
+                                ${htmlContent}
+                                
+                                ${navigationHTML}
+                                
+                                <div class="cta-box">
+                                    <h3>Ready to Master Arabic?</h3>
+                                    <p>Reading is a great step. The next is speaking. Book your free trial lesson and start your journey to fluency with an expert tutor.</p>
+                                    <!-- Link path needs to go up one level -->
+                                    <a href="../index.html#register" class="btn btn-primary">Book a Free Trial Lesson</a>
+                                </div>
+                            `;
+
+                            // Initialize lazy loading after content is loaded
+                            setTimeout(initLazyLoading, 100);
+                            
+                            // 🔥 NEW: Trigger layout animations
+                            setTimeout(() => {
+                                if (postLayout) {
+                                    postLayout.classList.add('loaded');
+                                }
+                            }, 200);
+                        })
+                        .catch(error => {
+                            console.error("Fetch Error:", error);
+                            postContentArea.innerHTML = '<h1>Article Not Found</h1><p>The content for this article could not be loaded. Please check the URL or go back to the blog.</p>';
+                        });
+
+                    // --- Sidebar Population ---
+                    const relatedPosts = allPosts.filter(p => p.category === postData.category && p.id !== postId).slice(0, 3);
+                    
+                    // Optimize related posts images
+                    const relatedPostsHTML = relatedPosts.length > 0 
+                        ? relatedPosts.map(p => `
+                            <a href="post-template.html?id=${p.id}">
+                                <img 
+                                    data-src="../${p.image}" 
+                                    alt="${p.alt}" 
+                                    style="width: 20px; height: 20px; object-fit: cover; border-radius: 4px; margin-right: 10px; vertical-align: middle;"
+                                    loading="lazy"
+                                >
+                                ${p.title}
+                            </a>
+                        `).join('')
+                        : '<p>No related articles found.</p>';
+
+                    const pageUrl = window.location.href;
+                    const pageTitle = encodeURIComponent(postData.title);
+
+                    postSidebarContainer.innerHTML = `
+                        <div class="sidebar-widget">
+                            <h3>Share this Article</h3>
+                            <div class="share-buttons">
+                                <a href="https://wa.me/?text=${pageTitle}%20${pageUrl}" class="share-btn whatsapp" target="_blank">
+                                    <svg viewBox="0 0 16 16"><path d="M13.6 2.326A7.9 7.9 0 0 0 8 0a7.9 7.9 0 0 0-7.93 7.93c0 1.4.36 2.76 1.06 3.96L0 16l4.2-1.1a7.9 7.9 0 0 0 3.8.96h.004c4.37 0 7.93-3.56 7.93-7.93a7.9 7.9 0 0 0-2.33-5.54zM8 14.52a6.6 6.6 0 0 1-3.36-.92l-.24-.14-2.5.65.67-2.43-.16-.25a6.56 6.56 0 0 1-1-3.5c0-3.63 2.95-6.58 6.59-6.58a6.56 6.56 0 0 1 4.66 1.93 6.56 6.56 0 0 1 1.93 4.66c-.003 3.64-2.96 6.59-6.59 6.59zm3.61-4.93c-.2-.1-1.17-.58-1.35-.65-.18-.07-.31-.1-.44.1s-.51.65-.63.78c-.11.13-.23.15-.43.05-.2-.1-.84-.31-1.6-.98-.59-.52-1-1.17-1.1-1.37-.12-.2-.01-.3.09-.4.09-.09.2-.23.3-.35.1-.11.13-.2.2-.33.07-.13.03-.25-.01-.35-.05-.1-.45-1.08-.6-1.47-.16-.4-.32-.34-.45-.34h-.27c-.18 0-.38.07-.53.25-.18.2-.69.68-.69 1.65s.71 1.92.81 2.05c.1.13 1.4 2.13 3.38 3 .47.2.84.33 1.13.42.48.15.9.13 1.25.08.38-.06 1.17-.48 1.34-.94.16-.46.16-.86.11-.94-.05-.08-.18-.13-.38-.23z"/></svg>
+                                    <span>WhatsApp</span>
+                                </a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=${pageUrl}" class="share-btn facebook" target="_blank">
+                                    <svg viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.95 9-5.45 9-9.95z"/></svg>
+                                    <span>Facebook</span>
+                                </a>
+                                <a href="https://twitter.com/intent/tweet?url=${pageUrl}&text=${pageTitle}" class="share-btn twitter" target="_blank">
+                                    <svg viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.67.88-.53 1.56-1.37 1.88-2.38-.83.49-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98-3.56-.18-6.72-1.89-8.84-4.48-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.58-.7-.02-1.36-.21-1.94-.53v.05c0 2.08 1.48 3.82 3.44 4.21-.36.1-.74.15-1.13.15-.28 0-.55-.03-.81-.08.55 1.7 2.14 2.94 4.03 2.97-1.47 1.15-3.33 1.84-5.35 1.84-.35 0-.69-.02-1.03-.06 1.9 1.22 4.16 1.92 6.58 1.92 7.9 0 12.22-6.56 12.22-12.22 0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.22z"/></svg>
+                                    <span>Twitter</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="sidebar-widget">
+                            <h3>Related Articles</h3>
+                            <div class="related-posts-list">${relatedPostsHTML}</div>
+                        </div>
+                        <div class="sidebar-widget">
+                            <!-- Link path needs to go up one level -->
+                            <a href="../blog.html" class="btn btn-secondary" style="width: 100%; text-align: center;">&larr; All Articles</a>
+                        </div>
+                    `;
+                } else {
+                    postContentArea.innerHTML = '<h1>Article Not Found</h1><p>The article you are looking for does not exist.</p>';
+                }
+            } else {
+                postContentArea.innerHTML = '<h1>Invalid Article ID</h1><p>Please specify an article ID in the URL.</p>';
+            }
+        });
+    </script>
+</body>
+</html>
