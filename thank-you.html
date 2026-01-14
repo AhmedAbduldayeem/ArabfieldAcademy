@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You! - Arabfield Academy</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/logo.jpg" type="image/jpeg">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Thank You! - Arabfield Academy">
+    <meta property="og:description" content="Thank you for registering with Arabfield Academy! We'll contact you soon to schedule your free trial Arabic lesson.">
+    <meta property="og:image" content="https://arabfieldacademy.netlify.app/images/social-preview.jpg">
+    <meta property="og:url" content="https://arabfieldacademy.netlify.app/thank-you.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Arabfield Academy">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Thank You! - Arabfield Academy">
+    <meta name="twitter:description" content="Thank you for registering with Arabfield Academy! We'll contact you soon to schedule your free trial Arabic lesson.">
+    <meta name="twitter:image" content="https://arabfieldacademy.netlify.app/images/social-preview.jpg">
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .thank-you-section {
+            text-align: center;
+            padding: 80px 20px;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--very-light-blue);
+        }
+        .thank-you-card {
+            background-color: var(--card-background);
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            max-width: 600px;
+            border-top: 5px solid var(--secondary-orange);
+        }
+        .thank-you-icon {
+            font-size: 64px;
+            color: var(--secondary-orange);
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+        .thank-you-card h1 {
+            font-size: 36px;
+            color: var(--primary-blue);
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        .thank-you-card p {
+            font-size: 18px;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+    </style>
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <header class="main-header" id="main-header-placeholder"></header>
+
+    <main class="thank-you-section">
+        <div class="thank-you-card">
+            <div class="thank-you-icon">✓</div>
+            <h1>Thank You for Registering!</h1>
+            <p>We have successfully received your request for a free trial lesson. A member of our team will contact you via WhatsApp within the next 24 hours to schedule your session. We are excited to have you with us!</p>
+            <a href="index.html" class="btn btn-primary">← Back to Homepage</a>
+        </div>
+    </main>
+
+    <footer class="main-footer" id="main-footer-placeholder"></footer>
+    <div class="fab-container" id="fabs-placeholder"></div>
+</body>
+</html>

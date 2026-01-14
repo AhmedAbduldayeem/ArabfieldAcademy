@@ -1,0 +1,32 @@
+{
+  "security": {
+    "encryptionKey": "Arabfield_Academy_Secure_2025_Protection_Key",
+    "sessionTimeout": 1800000,
+    "tokenExpiry": 300000,
+    "honeypotField": "website_url",
+    "rateLimit": {
+      "maxAttempts": 3,
+      "timeWindow": 900000
+    }
+  },
+  "analytics": {
+    "enabled": true,
+    "endpoint": "/api/analytics",
+    "respectDNT": true,
+    "anonymizeIP": true
+  },
+  "forms": {
+    "validation": {
+      "maxEmailLength": 254,
+      "minNameLength": 2,
+      "maxNameLength": 100,
+      "phonePattern": "^\\\\+[1-9]\\\\d{1,14}$"
+    }
+  },
+  "monitoring": {
+    "enabled": true,
+    "maxSuspiciousActivities": 10,
+    "rapidClickThreshold": 100,
+    "maxRapidClicks": 8
+  }
+}

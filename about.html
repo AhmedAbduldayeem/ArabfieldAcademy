@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Arabfield Academy</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="images/logo.jpg">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="About Us - Arabfield Academy">
+    <meta property="og:description" content="Discover our mission to illuminate your path to Arabic fluency. Expert native tutors, personalized curriculum, and cultural immersion experiences.">
+    <meta property="og:image" content="https://arabfieldacademy.netlify.app/images/social-preview.jpg">
+    <meta property="og:url" content="https://arabfieldacademy.netlify.app/about.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Arabfield Academy">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About Us - Arabfield Academy">
+    <meta name="twitter:description" content="Discover our mission to illuminate your path to Arabic fluency with expert native tutors and cultural immersion.">
+    <meta name="twitter:image" content="https://arabfieldacademy.netlify.app/images/social-preview.jpg">
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* --- ABOUT US PAGE SPECIFIC STYLES --- */
+        .mission-section { background-color: var(--very-light-blue ); }
+        .about-layout { display: grid; grid-template-columns: 1fr; gap: 50px; align-items: center; }
+        @media (min-width: 992px) { .about-layout { grid-template-columns: 1fr 1fr; } }
+        .about-image img { width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .about-content h2 { font-size: 36px; color: var(--primary-blue); margin-bottom: 20px; }
+        .about-content p { font-size: 18px; line-height: 1.8; color: #555; margin-bottom: 20px; }
+
+        .philosophy-section { background-color: var(--card-background); }
+        
+        .counters-section { background-color: var(--primary-blue); color: white; }
+        .counters-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: center; }
+        .counter-item .counter { font-size: 48px; font-weight: bold; }
+        .counter-item h4 { font-size: 18px; margin: 10px 0 0 0; font-weight: normal; opacity: 0.9; }
+
+        .commitment-section { background-color: var(--very-light-blue); }
+        .commitment-layout { text-align: center; max-width: 800px; margin: 0 auto; }
+        .commitment-layout .icon { 
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin: 0 auto 20px;
+            display: block;
+        }
+        .commitment-layout h2 { font-size: 36px; color: var(--primary-blue); margin-bottom: 15px; }
+        .commitment-layout p { font-size: 18px; color: #555; line-height: 1.8; }
+
+        .cta-section { background-color: var(--primary-blue); color: white; text-align: center; }
+        .cta-section h2 { color: white; }
+        .cta-section p { color: rgba(255,255,255,0.9); max-width: 600px; margin: -20px auto 30px; }
+
+        /* تحسينات للصور الجديدة في قسم الفلسفة التعليمية */
+        .philosophy-section .card-icon {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin: 0 auto 15px;
+            display: block;
+        }
+
+    </style>
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <header class="main-header" id="main-header-placeholder"></header>
+
+    <section class="hero-section">
+        <h1 data-aos="fade-down">About Arabfield Academy</h1>
+        <p data-aos="fade-up" data-aos-delay="200">Plant the language, Harvest the culture</p>
+    </section>
+
+    <section class="section mission-section">
+        <div class="container">
+            <div class="about-layout">
+                <div class="about-content" data-aos="fade-right" data-aos-delay="100">
+                    <h2>Our Mission: To Illuminate Your Path</h2>
+                    <p>At Arabfield Academy, our mission is to illuminate the path to Arabic fluency for non-native learners worldwide. We believe that language is a bridge to culture, connection, and understanding. We are dedicated to spreading the beauty of the Arabic language and its rich culture, correcting misconceptions, and creating a global community of passionate learners.</p>
+                    <p>The academy was born from a passion for sharing the depth and nuance of Arabic with the world. We are open to all cultures and backgrounds, providing a welcoming and inclusive environment where every student can thrive and achieve their personal and professional goals.</p>
+                </div>
+                <div class="about-image" data-aos="fade-left" data-aos-delay="300">
+                    <img src="images/Diverse.jpg" alt="Diverse group of students learning together">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section philosophy-section">
+        <h2 class="section-title" data-aos="fade-up">Our Educational Philosophy</h2>
+        <div class="container card-grid">
+            <div class="card" data-aos="fade-up" data-aos-delay="100">
+                <img src="images/Expert.jpg" alt="Expert Native Tutors" class="card-icon">
+                <h3>Expertise with Heart</h3>
+                <p>We believe the best teachers are not just native speakers, but passionate, qualified educators who create a supportive and motivating environment. They are mentors, not just instructors.</p>
+            </div>
+            <div class="card" data-aos="fade-up" data-aos-delay="200">
+                <img src="images/Goal-oriented.jpg" alt="Tailored Curriculum" class="card-icon">
+                <h3>Goal-Oriented Methods</h3>
+                <p>Your personal goals are our curriculum's blueprint. We focus on practical, real-world communication from day one, ensuring every lesson moves you closer to your specific objective.</p>
+            </div>
+            <div class="card" data-aos="fade-up" data-aos-delay="300">
+                <img src="images/culture-context.jpg" alt="Culture as Context" class="card-icon">
+                <h3>Culture as Context</h3>
+                <p>Language does not exist in a vacuum. Our lessons go beyond grammar, offering deep insights into Arab culture, etiquette, and history for a holistic and respectful learning experience.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section commitment-section">
+        <div class="container">
+            <div class="commitment-layout" data-aos="fade-up">
+                <img src="images/commitment.jpg" alt="Our Commitment" class="icon">
+                <h2>Our Commitment to You</h2>
+                <p>You are more than just a student to us; you are a partner in a shared journey. We are committed to providing a learning experience built on a foundation of respect, support, and genuine care. Your success is our success, and we are dedicated to providing the tools, guidance, and motivation you need to achieve your goals.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section cta-section">
+        <div class="container" data-aos="fade-up">
+            <h2>Ready to Join Our Journey?</h2>
+            <p>Your path to fluency and cultural understanding starts here. Let us be your guide.</p>
+            <a href="index.html#register" class="btn btn-secondary">Book Your Free Trial</a>
+        </div>
+    </section>
+
+    <footer class="main-footer" id="main-footer-placeholder"></footer>
+    <div id="fabs-placeholder"></div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true
+      });
+    </script>
+</body>
+</html>

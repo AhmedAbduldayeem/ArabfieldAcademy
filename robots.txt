@@ -1,0 +1,39 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://arabfieldacademy.com/sitemap.xml
+
+# Allow all main pages
+Allow: /index.html
+Allow: /about.html
+Allow: /programs.html
+Allow: /pricing.html
+Allow: /contact.html
+Allow: /blog.html
+
+# Allow blog posts
+Allow: /posts/
+
+# Allow assets
+Allow: /images/
+Allow: /style.css
+Allow: /app.js
+
+# Disallow admin and private pages
+Disallow: /teacher-login.html
+Disallow: /teacher-policy.html
+Disallow: /admin/
+
+# Crawl delay to be respectful to the server
+Crawl-delay: 1
+
+# Allow Googlebot to crawl all assets
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Special rules for other search engines
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2

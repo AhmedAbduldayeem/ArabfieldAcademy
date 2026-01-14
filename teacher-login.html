@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Portal - Arabfield Academy</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/logo.jpg" type="image/jpeg">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Teacher Portal - Arabfield Academy">
+    <meta property="og:description" content="Access the Arabfield Academy teacher portal to view policies and resources for our teaching staff.">
+    <meta property="og:image" content="https://arabfieldacademy.netlify.app/images/social-preview.jpg">
+    <meta property="og:url" content="https://arabfieldacademy.netlify.app/teacher-login.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Arabfield Academy">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Teacher Portal - Arabfield Academy">
+    <meta name="twitter:description" content="Access the Arabfield Academy teacher portal to view policies and resources for our teaching staff.">
+    <meta name="twitter:image" content="https://arabfieldacademy.netlify.app/images/social-preview.jpg">
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles remain the same */
+        .login-container { max-width: 450px; margin: 50px auto; padding: 40px; background-color: var(--card-background); border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); text-align: center; }
+        .login-container h1 { color: var(--primary-blue); margin-bottom: 20px; }
+        .login-container p { color: #555; margin-bottom: 30px; }
+        .login-container .form-group { text-align: left; }
+        .login-container .btn { width: 100%; }
+        #error-message { color: #dc3545; font-weight: bold; margin-top: 15px; display: none; }
+    </style>
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <header class="main-header" id="main-header-placeholder"></header>
+
+    <section class="section">
+        <div class="login-container">
+            <h1>Teacher Portal</h1>
+            <p>Please enter the password to access the Arabfield Academy teacher policies.</p>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+                <p id="error-message">Incorrect password. Please try again.</p>
+            </form>
+        </div>
+    </section>
+
+    <footer class="main-footer" id="main-footer-placeholder"></footer>
+    <div class="fab-container" id="fabs-placeholder"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById('login-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                const password = document.getElementById('password').value;
+                const errorMessage = document.getElementById('error-message');
+                // Password remains the same for access
+                if (password === '1111') {
+                    window.location.href = 'teacher-policy.html';
+                } else {
+                    errorMessage.style.display = 'block';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

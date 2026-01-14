@@ -1,0 +1,236 @@
+// Central data file for all blog posts: blog-data.js
+// UPDATED VERSION: Removed music post, no future dates beyond 2025
+
+const allPosts = [
+    // Learning Tips
+    {
+        id: 'effective-strategies',
+        link: 'posts/post-template.html?id=effective-strategies',
+        image: 'images/Effective-strategy.jpg',
+        alt: 'Effective learning strategies',
+        category: 'Learning Tips',
+        title: '5 Effective Strategies for Learning Arabic Faster',
+        excerpt: 'Unlock your potential with these proven techniques to accelerate your Arabic language acquisition journey.',
+        date: '2025-01-15',
+        featured: true
+    },
+    {
+        id: 'staying-motivated',
+        link: 'posts/post-template.html?id=staying-motivated',
+        image: 'images/motivated.jpg',
+        alt: 'A person feeling motivated',
+        category: 'Learning Tips',
+        title: 'Staying Motivated on Your Arabic Learning Journey',
+        excerpt: 'Tips and tricks to keep your spirits high and your learning consistent as you master Arabic.',
+        date: '2025-03-22'
+    },
+    {
+        id: 'mastering-pronunciation',
+        link: 'posts/post-template.html?id=mastering-pronunciation',
+        image: 'images/Man.jpg',
+        alt: 'Man speaking to practice pronunciation',
+        category: 'Learning Tips',
+        title: 'Mastering Arabic Pronunciation: Tips for Non-Native Speakers',
+        excerpt: 'Practical tips to help you master the unique and challenging sounds of the Arabic language.',
+        date: '2025-06-10'
+    },
+    // NEW: Learning Tips
+    {
+        id: 'memory-techniques',
+        link: 'posts/post-template.html?id=memory-techniques',
+        image: 'images/memory.jpg',
+        alt: 'Memory techniques visualization',
+        category: 'Learning Tips',
+        title: 'Memory Techniques for Arabic Vocabulary',
+        excerpt: 'Discover powerful mnemonic methods to help you remember Arabic words and phrases more effectively.',
+        date: '2025-10-05'
+    },
+    // NEW: Learning Resources
+    {
+        id: 'best-arabic-apps',
+        link: 'posts/post-template.html?id=best-arabic-apps',
+        image: 'images/apps.jpg',
+        alt: 'Mobile apps for learning Arabic',
+        category: 'Learning Tips',
+        title: 'Top 10 Apps for Learning Arabic in 2025',
+        excerpt: 'A curated list of the most effective mobile applications to supplement your Arabic learning journey.',
+        date: '2025-04-25'
+    },
+    // NEW: Professional Arabic
+    {
+        id: 'business-arabic-tips',
+        link: 'posts/post-template.html?id=business-arabic-tips',
+        image: 'images/business.jpg',
+        alt: 'Business meeting in Arabic',
+        category: 'Learning Tips',
+        title: 'Essential Business Arabic Phrases for Professionals',
+        excerpt: 'Key phrases and etiquette tips for conducting business meetings and negotiations in Arabic.',
+        date: '2025-09-15'
+    },
+    // Culture and History
+    {
+        id: 'arabic-calligraphy',
+        link: 'posts/post-template.html?id=arabic-calligraphy',
+        image: 'images/arabic-calligraphy.jpg',
+        alt: 'Arabic Calligraphy',
+        category: 'Culture and History',
+        title: 'The Beauty of Arabic Calligraphy: An Introduction',
+        excerpt: 'Explore the rich history and artistic elegance of Arabic calligraphy, a timeless art form deeply rooted in culture.',
+        date: '2025-02-28'
+    },
+    {
+        id: 'arabic-dialects',
+        link: 'posts/post-template.html?id=arabic-dialects',
+        image: 'images/arabic-dialects.jpg',
+        alt: 'Map of Arabic dialects',
+        category: 'Culture and History',
+        title: 'Understanding Arabic Dialects: A Beginner\'s Guide',
+        excerpt: 'Navigate the diverse world of Arabic dialects and understand their importance in daily communication.',
+        date: '2025-04-14'
+    },
+    {
+        id: 'classical-literature',
+        link: 'posts/post-template.html?id=classical-literature',
+        image: 'images/arabic-library.jpg',
+        alt: 'A library with classical Arabic books',
+        category: 'Culture and History',
+        title: 'A Glimpse into Classical Arabic Literature',
+        excerpt: 'Discover the masterpieces and influential figures that shaped the rich tradition of Arabic literature.',
+        date: '2025-08-05'
+    },
+    // NEW: Islamic Heritage (Replacement for music post)
+    {
+        id: 'islamic-heritage',
+        link: 'posts/post-template.html?id=islamic-heritage',
+        image: 'images/islamic-heritage.jpg',
+        alt: 'Islamic heritage and architecture',
+        category: 'Culture and History',
+        title: 'Islamic Heritage in the Arabic Language',
+        excerpt: 'Explore how Islam shaped and enriched the Arabic language through Quran, Hadith, and Islamic sciences.',
+        date: '2025-11-20'
+    },
+    // Grammar Guides
+    {
+        id: 'idafa-construction',
+        link: 'posts/post-template.html?id=idafa-construction',
+        image: 'images/Grammar0.jpg',
+        alt: 'Arabic grammar book',
+        category: 'Grammar Guides',
+        title: 'Understanding the Idafa (الإضافة) Construction',
+        excerpt: 'A clear and simple guide to mastering one of the most fundamental concepts in Arabic grammar.',
+        date: '2025-05-03'
+    },
+    {
+        id: 'sun-moon-letters',
+        link: 'posts/post-template.html?id=sun-moon-letters',
+        image: 'images/Grammar.jpg',
+        alt: 'Sun and moon illustration',
+        category: 'Grammar Guides',
+        title: 'The Sun and Moon Letters (الحروف الشمسية والقمرية)',
+        excerpt: 'Learn the simple rule that will make your pronunciation of \'al-\' sound much more natural and fluent.',
+        date: '2025-07-19'
+    },
+    {
+        id: 'verb-conjugation',
+        link: 'posts/post-template.html?id=verb-conjugation',
+        image: 'images/Grammar1.jpg',
+        alt: 'A chart showing Arabic verb patterns',
+        category: 'Grammar Guides',
+        title: 'Understanding Arabic Verb Conjugation',
+        excerpt: 'A beginner\'s guide to the logical system of past and present tense verbs in Arabic.',
+        date: '2025-09-30'
+    },
+    {
+        id: 'vocabulary-roots',
+        link: 'posts/post-template.html?id=vocabulary-roots',
+        image: 'images/Arabic books.jpg',
+        alt: 'A diagram showing how Arabic words branch from a single root',
+        category: 'Grammar Guides',
+        title: 'Unlock Vocabulary with the Root System',
+        excerpt: 'Learn one root, unlock ten words. It\'s the ultimate vocabulary hack for learning Arabic efficiently.',
+        date: '2025-11-12'
+    },
+    // NEW: Grammar Guides
+    {
+        id: 'arabic-numbers-guide',
+        link: 'posts/post-template.html?id=arabic-numbers-guide',
+        image: 'images/numbers.jpg',
+        alt: 'Arabic numerals chart',
+        category: 'Grammar Guides',
+        title: 'Mastering Arabic Numbers and Counting',
+        excerpt: 'A comprehensive guide to Arabic numerals, cardinal and ordinal numbers, and their practical usage.',
+        date: '2025-12-08'
+    },
+    // Student Stories
+    {
+        id: 'sarah-journey',
+        link: 'posts/post-template.html?id=sarah-journey',
+        image: 'images/From-zero.jpg',
+        alt: 'Person looking at a sunrise, representing a new beginning',
+        category: 'Student Stories',
+        title: 'From Zero to Confident: Sarah\'s Journey',
+        excerpt: 'Be inspired by the story of Sarah, who went from knowing no Arabic to holding confident conversations in just six months.',
+        date: '2025-01-30'
+    },
+    {
+        id: 'david-career',
+        link: 'posts/post-template.html?id=david-career',
+        image: 'images/career-doors.jpg',
+        alt: 'Opening doors to new career opportunities',
+        category: 'Student Stories',
+        title: 'How David Mastered Business Arabic for His Career',
+        excerpt: 'Discover how learning targeted business Arabic with Arabfield Academy opened new doors for David in international trade.',
+        date: '2025-03-05'
+    },
+    {
+        id: 'aisha-quran',
+        link: 'posts/post-template.html?id=aisha-quran',
+        image: 'images/Aisha.jpg',
+        alt: 'Aisha reading the Quran',
+        category: 'Student Stories',
+        title: 'Aisha\'s Spiritual Journey with Quranic Arabic',
+        excerpt: 'Read about Aisha\'s fulfilling experience of connecting more deeply with her faith by learning Quranic Arabic.',
+        date: '2025-06-25'
+    },
+    {
+        id: 'maria-egyptian',
+        link: 'posts/post-template.html?id=maria-egyptian',
+        image: 'images/Maria.jpg',
+        alt: 'A young woman laughing with friends',
+        category: 'Student Stories',
+        title: 'How Maria Found Her Voice in Cairo',
+        excerpt: 'From awkward silence to laughing with friends, discover how learning Egyptian Arabic transformed a student\'s social life.',
+        date: '2025-08-18'
+    },
+    // NEW: Student Stories
+    {
+        id: 'mohammed-medical',
+        link: 'posts/post-template.html?id=mohammed-medical',
+        image: 'images/medical-arabic.jpg',
+        alt: 'Medical professional speaking Arabic',
+        category: 'Student Stories',
+        title: 'Mohammed\'s Journey: Learning Medical Arabic',
+        excerpt: 'How learning specialized medical Arabic helped a doctor better serve his patients in the Middle East.',
+        date: '2025-07-03'
+    },
+    {
+        id: 'daniel-msa',
+        link: 'posts/post-template.html?id=daniel-msa',
+        image: 'images/Daniel.jpg',
+        alt: 'A researcher presenting his work',
+        category: 'Student Stories',
+        title: 'Beyond Google Translate: Daniel\'s Journey',
+        excerpt: 'How mastering MSA gave a researcher the confidence to engage directly with academic sources and peers.',
+        date: '2025-10-08'
+    },
+    {
+        id: 'laila-kids',
+        link: 'posts/post-template.html?id=laila-kids',
+        image: 'images/Laila.jpg',
+        alt: 'A young girl learning Arabic through play',
+        category: 'Student Stories',
+        title: 'Making Arabic Fun: Laila\'s Adventure',
+        excerpt: 'Discovering how songs, games, and stories can spark a lifelong love for the Arabic language in young learners.',
+        date: '2025-12-15'
+    }
+];

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partners in Success - Arabfield Academy</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpg" href="images/logo.jpg">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Partners in Success - Arabfield Academy">
+    <meta property="og:description" content="Meet our expert native Arabic tutors - passionate educators selected through rigorous criteria to provide the best learning experience for your Arabic journey.">
+    <meta property="og:image" content="https://arabfieldacademy.netlify.app/images/social-preview.jpg">
+    <meta property="og:url" content="https://arabfieldacademy.netlify.app/partners-in-success.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Arabfield Academy">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Partners in Success - Arabfield Academy">
+    <meta name="twitter:description" content="Meet our expert native Arabic tutors - passionate educators selected through rigorous criteria for your Arabic journey.">
+    <meta name="twitter:image" content="https://arabfieldacademy.netlify.app/images/social-preview.jpg">
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* --- Page Specific Styles --- */
+        .section-intro { text-align: center; max-width: 800px; margin: -20px auto 50px; font-size: 18px; color: #555; }
+        .criteria-section { background-color: var(--very-light-blue ); }
+        .criteria-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .criteria-card { background-color: var(--card-background); border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.07); padding: 30px; display: flex; align-items: flex-start; gap: 20px; }
+        .criteria-icon { 
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-top: 5px;
+            flex-shrink: 0;
+        }
+        .criteria-text h3 { font-size: 22px; color: var(--primary-blue); margin-bottom: 10px; }
+        .criteria-text p { color: #555; line-height: 1.7; }
+        
+        .philosophy-section { background-color: var(--card-background); }
+        .philosophy-content { max-width: 800px; margin: 0 auto; } 
+        .philosophy-content h2 { text-align: center; }
+        .simple-quote { border-left: 4px solid var(--secondary-orange); padding-left: 25px; margin-bottom: 25px; }
+        .simple-quote .quote-text { font-size: 20px; font-style: italic; color: var(--primary-blue); margin: 0; line-height: 1.7; }
+        .simple-quote .quote-author { font-size: 16px; font-weight: bold; color: #555; margin-top: 15px; display: block; }
+
+        .cta-section { background-color: var(--primary-blue); color: white; text-align: center; }
+        .cta-section h2 { color: white; }
+        .cta-section p { color: rgba(255,255,255,0.9); max-width: 600px; margin: -20px auto 30px; }
+    </style>
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <header class="main-header" id="main-header-placeholder"></header>
+
+    <section class="hero-section">
+        <h1 data-aos="fade-down">Our Partners in Success</h1>
+        <p data-aos="fade-up" data-aos-delay="200">The Educators Who Illuminate the Path</p>
+    </section>
+
+    <section class="section criteria-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Our Selection Criteria</h2>
+            <p class="section-intro" data-aos="fade-up" data-aos-delay="100">At Arabfield Academy, our tutors are the heart of our mission. We don't just hire native speakers; we select passionate educators who meet our rigorous standards to ensure you receive the best possible learning experience.</p>
+            <div class="criteria-grid">
+                <div class="criteria-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="images/icon-degree.jpg" alt="Academic Excellence" class="criteria-icon">
+                    <div class="criteria-text">
+                        <h3>Academic Excellence</h3>
+                        <p>All our tutors hold university degrees, with many specializing in Arabic language, literature, or linguistics.</p>
+                    </div>
+                </div>
+                <div class="criteria-card" data-aos="fade-up" data-aos-delay="300">
+                    <img src="images/icon-experience.jpg" alt="Proven Teaching Experience" class="criteria-icon">
+                    <div class="criteria-text">
+                        <h3>Proven Teaching Experience</h3>
+                        <p>We require a minimum of two years of experience specifically in teaching Arabic to non-native speakers.</p>
+                    </div>
+                </div>
+                <div class="criteria-card" data-aos="fade-up" data-aos-delay="400">
+                    <img src="images/icon-communication.jpg" alt="Exceptional Communication Skills" class="criteria-icon">
+                    <div class="criteria-text">
+                        <h3>Exceptional Communication Skills</h3>
+                        <p>Our tutors are fluent in English, enabling them to explain complex concepts clearly and build strong rapport.</p>
+                    </div>
+                </div>
+                <div class="criteria-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="images/icon-passion.jpg" alt="Passion and Patience" class="criteria-icon">
+                    <div class="criteria-text">
+                        <h3>Passion and Patience</h3>
+                        <p>We select individuals who genuinely love teaching and demonstrate immense patience, creating a supportive environment.</p>
+                    </div>
+                </div>
+                <div class="criteria-card" data-aos="fade-up" data-aos-delay="300">
+                    <img src="images/icon-tech.jpg" alt="Technological Proficiency" class="criteria-icon">
+                    <div class="criteria-text">
+                        <h3>Technological Proficiency</h3>
+                        <p>Tutors must be adept at using modern online teaching tools to create an engaging virtual classroom.</p>
+                    </div>
+                </div>
+                <div class="criteria-card" data-aos="fade-up" data-aos-delay="400">
+                    <img src="images/icon-culture.jpg" alt="Cultural & Human Sensitivity" class="criteria-icon">
+                    <div class="criteria-text">
+                        <h3>Cultural & Human Sensitivity</h3>
+                        <p>We choose open-minded educators who respect all cultures, fostering an inclusive space where every student feels valued.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section philosophy-section">
+        <div class="container">
+            <div class="philosophy-content" data-aos="fade-up">
+                <h2 class="section-title">A Glimpse into Our Philosophy</h2>
+                <div class="simple-quote">
+                    <p class="quote-text">"My goal is to break the psychological barrier. I want my students to feel safe to make mistakes, because mistakes are the stepping stones to fluency."</p>
+                    <span class="quote-author">— Fatima S., MSA & Egyptian Dialect Tutor</span>
+                </div>
+                <div class="simple-quote">
+                    <p class="quote-text">"I don't just teach a language; I offer a key to a new culture. My success is when a student understands a joke or a line of poetry for the first time."</p>
+                    <span class="quote-author">— Khalid M., Classical & Quranic Arabic Tutor</span>
+                </div>
+                <!-- THE FIX IS HERE: The third quote is now generic and focused on teaching methodology -->
+                <div class="simple-quote">
+                    <p class="quote-text">"The best lessons are conversations. I see myself as a guide, helping students discover the language for themselves, one step at a time."</p>
+                    <span class="quote-author">— Ahmed Y., Senior Language Tutor</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section cta-section">
+        <div class="container" data-aos="fade-up">
+            <h2>Ready to Meet Your Perfect Tutor?</h2>
+            <p>Your journey to fluency begins with the right guide. Let us match you with an expert tutor who aligns with your goals and learning style.</p>
+            <a href="index.html#register" class="btn btn-secondary">Book Your Free Trial</a>
+        </div>
+    </section>
+
+    <footer class="main-footer" id="main-footer-placeholder"></footer>
+    <div id="fabs-placeholder"></div>
+    <div id="modal-placeholder"></div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true
+      } );
+    </script>
+</body>
+</html>
