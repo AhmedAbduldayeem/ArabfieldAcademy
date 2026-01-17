@@ -1,11 +1,11 @@
-<a href="index.html" class="header-logo-wrapper">
+<a href="index.html" class="header-logo-wrapper force-show">
     <img src="images/Logo.png" alt="Arabfield Academy Logo" class="logo-image">
     <div class="logo-text-container">
         <span class="logo-english">Arabfield Academy</span>
     </div>
 </a>
-<div class="header-right-content">
-    <nav class="main-nav">
+<div class="header-right-content force-show">
+    <nav class="main-nav" id="main-nav">
         <ul>
             <li><a href="index.html" class="nav-link">Home</a></li>
             <li><a href="about.html" class="nav-link">About Us</a></li>
@@ -15,9 +15,9 @@
             <li><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
     </nav>
-    <a href="index.html#register" class="btn btn-primary btn-book-trial">Book Your Free Trial</a>
+    <a href="index.html#register" class="btn btn-primary btn-book-trial force-show">Book Your Free Trial</a>
 </div>
-<button class="mobile-nav-toggle" aria-label="Toggle navigation">
+<button class="mobile-nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">
     <span></span><span></span><span></span>
 </button>
 
@@ -251,7 +251,152 @@
             inset -2px -2px 4px rgba(255, 255, 255, 0.8);
     }
     
-    /* تصميم متجاوب */
+    /* =========================================== */
+    /* إصلاحات طارئة للهيدر على الموبايل - مهم جداً */
+    /* =========================================== */
+    
+    /* القوة الإجبارية لإظهار العناصر على الموبايل */
+    .force-show {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    /* إصلاح كامل للهيدر على الموبايل */
+    @media (max-width: 768px) {
+        /* تأكد أن الهيدر الأساسي يظهر */
+        body > header,
+        header:first-of-type,
+        .site-header,
+        .main-header,
+        [class*="header"]:first-of-type {
+            all: unset !important;
+            display: flex !important;
+            flex-direction: row !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 70px !important;
+            min-height: 70px !important;
+            background: white !important;
+            z-index: 10000 !important;
+            padding: 10px 15px !important;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1) !important;
+            margin: 0 !important;
+            border: none !important;
+            overflow: visible !important;
+        }
+        
+        /* إصلاح العناصر الداخلية */
+        .header-logo-wrapper {
+            display: flex !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            flex-shrink: 0;
+        }
+        
+        .logo-image {
+            height: 40px !important;
+            width: auto !important;
+        }
+        
+        .logo-english {
+            font-size: 16px !important;
+        }
+        
+        /* زر القائمة للموبايل - إظهاره */
+        .mobile-nav-toggle {
+            display: flex !important;
+            z-index: 10001;
+        }
+        
+        /* إخفاء القائمة العادية على الموبايل */
+        .main-nav:not(.active) {
+            display: none;
+        }
+        
+        /* زر الحجز - تصغير حجمه على الموبايل */
+        .btn-book-trial {
+            padding: 8px 16px !important;
+            font-size: 13px !important;
+            margin-left: auto;
+            margin-right: 10px;
+        }
+        
+        /* عندما تكون القائمة مفتوحة */
+        .main-nav.active {
+            display: block !important;
+            position: fixed !important;
+            top: 70px !important;
+            left: 0 !important;
+            right: 0 !important;
+            background: white !important;
+            padding: 20px !important;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important;
+            border-top: 1px solid #eee !important;
+            z-index: 9999 !important;
+        }
+        
+        .main-nav.active ul {
+            flex-direction: column !important;
+            gap: 15px !important;
+        }
+        
+        .main-nav.active .nav-link {
+            width: 100% !important;
+            text-align: center !important;
+            margin: 5px 0 !important;
+            padding: 15px 20px !important;
+            font-size: 16px !important;
+        }
+        
+        /* إخفاء الخطوط الفاصلة على الموبايل */
+        .main-nav li:not(:last-child)::after {
+            display: none !important;
+        }
+        
+        /* طبقة حماية لمنع أي عنصر من إخفاء الهيدر */
+        body {
+            padding-top: 70px !important;
+        }
+    }
+    
+    /* تحسينات إضافية للشاشات الصغيرة جداً */
+    @media (max-width: 480px) {
+        body > header,
+        header:first-of-type {
+            height: 60px !important;
+            min-height: 60px !important;
+            padding: 8px 10px !important;
+        }
+        
+        .logo-image {
+            height: 35px !important;
+        }
+        
+        .logo-english {
+            font-size: 15px !important;
+        }
+        
+        .btn-book-trial {
+            padding: 6px 12px !important;
+            font-size: 12px !important;
+        }
+        
+        .mobile-nav-toggle {
+            width: 40px !important;
+            height: 40px !important;
+        }
+        
+        body {
+            padding-top: 60px !important;
+        }
+    }
+    
+    /* تصميم متجاوب أصلي */
     @media (max-width: 1100px) {
         .main-nav ul {
             gap: 8px;
@@ -295,58 +440,83 @@
         }
     }
     
+    /* =========================================== */
+    /* حدود تصحيح للاختبار - يمكن إزالتها بعد التأكد */
+    /* =========================================== */
+    /*
     @media (max-width: 768px) {
-        .mobile-nav-toggle {
-            display: flex;
+        body > header {
+            border: 3px solid #ff0000 !important;
         }
-        
-        .main-nav {
-            display: none;
+        .header-logo-wrapper {
+            border: 2px solid #00ff00 !important;
         }
-        
-        .main-nav.active {
-            display: block;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background: white;
-            padding: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border-radius: 0 0 10px 10px;
-            z-index: 1000;
-        }
-        
-        .main-nav.active ul {
-            flex-direction: column;
-            gap: 15px;
-        }
-        
-        .main-nav.active .nav-link {
-            width: 100%;
-            text-align: center;
-            margin: 5px 0;
-            padding: 12px 20px;
-            font-size: 15px;
-        }
-        
-        .main-nav.active .nav-link.active {
-            background: linear-gradient(145deg, #e67e22, #d35400);
-            color: white !important;
-            box-shadow: 
-                inset 4px 4px 8px rgba(210, 84, 0, 0.3),
-                inset -3px -3px 6px rgba(230, 126, 34, 0.4);
-        }
-        
-        .main-nav li:not(:last-child)::after {
-            display: none;
+        .btn-book-trial {
+            border: 2px solid #0000ff !important;
         }
     }
+    */
 </style>
 
 <script>
     // JavaScript for active tab highlighting and mobile menu
     document.addEventListener('DOMContentLoaded', function() {
+        console.log('Header script loaded - Mobile fix applied');
+        
+        // === إصلاح طارئ للهيدر على الموبايل ===
+        if (window.innerWidth <= 768) {
+            console.log('Mobile device detected - Forcing header visibility');
+            
+            // البحث عن جميع العناصر المشتبه بها كـ header
+            const possibleHeaders = [
+                document.querySelector('header'),
+                document.querySelector('.header'),
+                document.querySelector('[class*="header"]'),
+                document.querySelector('body > div:first-child')
+            ];
+            
+            possibleHeaders.forEach(el => {
+                if (el && el.style) {
+                    el.style.cssText += `
+                        display: flex !important;
+                        visibility: visible !important;
+                        opacity: 1 !important;
+                        position: fixed !important;
+                        top: 0 !important;
+                        left: 0 !important;
+                        width: 100% !important;
+                        height: 70px !important;
+                        background: white !important;
+                        z-index: 10000 !important;
+                        padding: 10px 15px !important;
+                        box-shadow: 0 2px 15px rgba(0,0,0,0.1) !important;
+                        margin: 0 !important;
+                    `;
+                    
+                    // إضافة padding للbody لمنع تداخل المحتوى
+                    document.body.style.paddingTop = '70px';
+                }
+            });
+            
+            // تأكد من ظهور العناصر المهمة
+            const importantElements = [
+                '.header-logo-wrapper',
+                '.btn-book-trial',
+                '.mobile-nav-toggle'
+            ];
+            
+            importantElements.forEach(selector => {
+                const elements = document.querySelectorAll(selector);
+                elements.forEach(el => {
+                    if (el.style) {
+                        el.style.display = 'flex';
+                        el.style.visibility = 'visible';
+                        el.style.opacity = '1';
+                    }
+                });
+            });
+        }
+        
         // Get current page URL
         const currentUrl = window.location.pathname.split('/').pop() || 'index.html';
         
@@ -368,31 +538,6 @@
             if (currentUrl === 'index.html' && linkUrl === 'index.html') {
                 link.classList.add('active');
             }
-            
-            // Add click animation
-            link.addEventListener('mousedown', function() {
-                if (!this.classList.contains('active')) {
-                    this.style.transform = 'translateY(2px)';
-                    this.style.boxShadow = 
-                        'inset 4px 4px 8px rgba(0, 0, 0, 0.08), inset -3px -3px 6px rgba(255, 255, 255, 0.8)';
-                }
-            });
-            
-            link.addEventListener('mouseup', function() {
-                if (!this.classList.contains('active')) {
-                    this.style.transform = 'translateY(-3px)';
-                    this.style.boxShadow = 
-                        '6px 6px 12px rgba(0, 0, 0, 0.1), -3px -3px 8px rgba(255, 255, 255, 0.9), inset 1px 1px 3px rgba(255, 255, 255, 0.6), inset -1px -1px 3px rgba(0, 0, 0, 0.07)';
-                }
-            });
-            
-            link.addEventListener('mouseleave', function() {
-                if (!this.classList.contains('active')) {
-                    this.style.transform = 'translateY(0)';
-                    this.style.boxShadow = 
-                        '4px 4px 8px rgba(0, 0, 0, 0.08), -2px -2px 6px rgba(255, 255, 255, 0.8), inset 1px 1px 2px rgba(255, 255, 255, 0.5), inset -1px -1px 2px rgba(0, 0, 0, 0.05)';
-                }
-            });
         });
         
         // If no active link found, highlight home by default
@@ -407,12 +552,17 @@
         const mainNav = document.querySelector('.main-nav');
         
         if (mobileToggle && mainNav) {
-            mobileToggle.addEventListener('click', function() {
+            mobileToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
                 mainNav.classList.toggle('active');
+                
+                // تحديث حالة ARIA
+                const isExpanded = mainNav.classList.contains('active');
+                this.setAttribute('aria-expanded', isExpanded);
                 
                 // Animate hamburger icon
                 const spans = this.querySelectorAll('span');
-                if (mainNav.classList.contains('active')) {
+                if (isExpanded) {
                     spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
                     spans[1].style.opacity = '0';
                     spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
@@ -425,14 +575,51 @@
             
             // Close menu when clicking outside
             document.addEventListener('click', function(event) {
-                if (!mainNav.contains(event.target) && !mobileToggle.contains(event.target)) {
+                if (mainNav.classList.contains('active') && 
+                    !mainNav.contains(event.target) && 
+                    !mobileToggle.contains(event.target)) {
                     mainNav.classList.remove('active');
+                    mobileToggle.setAttribute('aria-expanded', 'false');
                     const spans = mobileToggle.querySelectorAll('span');
                     spans[0].style.transform = 'none';
                     spans[1].style.opacity = '1';
                     spans[2].style.transform = 'none';
                 }
             });
+            
+            // Close menu with Escape key
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape' && mainNav.classList.contains('active')) {
+                    mainNav.classList.remove('active');
+                    mobileToggle.setAttribute('aria-expanded', 'false');
+                    const spans = mobileToggle.querySelectorAll('span');
+                    spans[0].style.transform = 'none';
+                    spans[1].style.opacity = '1';
+                    spans[2].style.transform = 'none';
+                }
+            });
+        }
+        
+        // Log للتصحيح
+        console.log('Header elements found:');
+        console.log('- Logo:', document.querySelector('.header-logo-wrapper'));
+        console.log('- Navigation:', document.querySelector('.main-nav'));
+        console.log('- Mobile toggle:', document.querySelector('.mobile-nav-toggle'));
+        console.log('- Window width:', window.innerWidth);
+    });
+    
+    // إصلاح إضافي عند تغيير حجم النافذة
+    window.addEventListener('resize', function() {
+        if (window.innerWidth <= 768) {
+            const header = document.querySelector('header') || 
+                          document.querySelector('.header') || 
+                          document.querySelector('[class*="header"]');
+            
+            if (header && header.style) {
+                header.style.display = 'flex';
+                header.style.visibility = 'visible';
+                document.body.style.paddingTop = '70px';
+            }
         }
     });
 </script>
