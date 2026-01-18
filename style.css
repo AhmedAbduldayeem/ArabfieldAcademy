@@ -649,3 +649,47 @@ body {
     font-size: 14px;
     color: #777;
 }
+
+/* ==== الكود الجديد للموبايل (768px) ==== */
+@media (max-width: 768px) {
+    /* إظهار حاوية المنيو */
+    .main-nav.active {
+        display: block !important;
+        position: absolute !important;
+        top: 70px !important;
+        left: 0 !important;
+        width: 100% !important;
+        background: white !important;
+        z-index: 99999 !important;
+        height: auto !important; /* عشان متكنش صغيرة */
+        min-height: 250px !important; /* ضمان مساحة للروابط */
+    }
+
+    /* إجبار القائمة الداخلية (الروابط) على الظهور */
+    .main-nav.active ul {
+        display: flex !important;
+        flex-direction: column !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        padding: 20px !important;
+        margin: 0 !important;
+        list-style: none !important;
+    }
+
+    /* إظهار كل رابط لوحده */
+    .main-nav.active ul li {
+        display: block !important;
+        width: 100% !important;
+        margin: 10px 0 !important;
+    }
+
+    .main-nav.active ul li a {
+        display: block !important;
+        color: #0a4d68 !important; /* اللون الأزرق */
+        font-size: 18px !important;
+        text-align: center !important;
+        padding: 10px !important;
+        text-decoration: none !important;
+    }
+}
+/* ==== نهاية الكود الجديد ==== */
