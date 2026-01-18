@@ -1,25 +1,27 @@
-<a href="index.html" class="header-logo-wrapper">
-    <img src="images/Logo.png" alt="Arabfield Academy Logo" class="logo-image">
-    <div class="logo-text-container">
-        <span class="logo-english">Arabfield Academy</span>
+<header class="main-header" id="main-header-placeholder">
+    <a href="index.html" class="header-logo-wrapper">
+        <img src="images/Logo.jpg" alt="Arabfield Academy Logo" class="logo-image" loading="lazy">
+        <div class="logo-text-container">
+            <span class="logo-english">Arabfield Academy</span>
+        </div>
+    </a>
+    <div class="header-right-content">
+        <nav class="main-nav" aria-label="Main Navigation">
+            <ul class="nav-list">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="partners-in-success.html" class="nav-link">Partners in Success</a></li>
+                <li><a href="programs.html" class="nav-link">Our Programs</a></li>
+                <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="index.html#register" class="btn btn-primary btn-book-trial">Book Your Free Trial</a>
     </div>
-</a>
-<div class="header-right-content">
-    <nav class="main-nav">
-        <ul>
-            <li><a href="index.html" class="nav-link">Home</a></li>
-            <li><a href="about.html" class="nav-link">About Us</a></li>
-            <li><a href="programs.html" class="nav-link">Our Programs</a></li>
-            <li><a href="pricing.html" class="nav-link">Pricing</a></li>
-            <li><a href="blog.html" class="nav-link">Blog</a></li>
-            <li><a href="contact.html" class="nav-link">Contact</a></li>
-        </ul>
-    </nav>
-    <a href="index.html#register" class="btn btn-primary btn-book-trial">Book Your Free Trial</a>
-</div>
-<button class="mobile-nav-toggle" aria-label="Toggle navigation">
-    <span></span><span></span><span></span>
-</button>
+    <button class="mobile-nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+    </button>
 
 <style>
     /* زر الحجز */
@@ -46,6 +48,11 @@
         background: linear-gradient(to right, #d35400, #e67e22);
         transform: translateY(-2px);
         box-shadow: 0 6px 18px rgba(230, 126, 34, 0.4);
+    }
+    
+    .btn-book-trial:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 8px rgba(230, 126, 34, 0.3);
     }
     
     /* تبويبات التنقل - بلون رصاصي واضح جدًا مع تأثير 3D */
@@ -140,7 +147,7 @@
     }
     
     /* قائمة التنقل */
-    .main-nav ul {
+    .nav-list {
         display: flex;
         list-style: none;
         gap: 12px; /* مسافة أكبر بين التبويبات */
@@ -150,12 +157,12 @@
     }
     
     /* مسافات بينية واضحة بين التبويبات */
-    .main-nav li {
+    .nav-item {
         position: relative;
     }
     
     /* خط فاصل ثلاثي الأبعاد بين التبويبات */
-    .main-nav li:not(:last-child)::after {
+    .nav-item:not(:last-child)::after {
         content: '';
         position: absolute;
         right: -6px;
@@ -251,9 +258,75 @@
             inset -2px -2px 4px rgba(255, 255, 255, 0.8);
     }
     
+    /* التعديلات الجوهرية للموبايل */
+    @media (max-width: 768px) {
+        .header-right-content {
+            gap: 10px;
+        }
+
+        .main-nav {
+            display: none; /* مخفي افتراضياً */
+        }
+
+        .main-nav.active {
+            display: block !important;
+            position: fixed !important; /* تثبيت في كامل الشاشة */
+            top: 70px;
+            left: 0;
+            width: 100%;
+            background: white !important;
+            z-index: 999999 !important;
+            height: auto;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .nav-list {
+            display: flex !important;
+            flex-direction: column !important;
+            width: 100% !important;
+            padding: 20px 0 !important;
+            margin: 0 !important;
+        }
+
+        .nav-list li {
+            width: 100%;
+            display: block !important;
+        }
+
+        .nav-link {
+            display: block !important;
+            width: 90% !important;
+            margin: 10px auto !important;
+            text-align: center;
+            background: #f8f8f8 !important; /* لون واضح */
+            color: #2c3e50 !important;
+            border: 1px solid #ddd !important;
+        }
+
+        /* زر الحجز في الموبايل */
+        .btn-book-trial {
+            display: none; /* هنخفيه من الهيدر عشان ميزحمش الدنيا */
+        }
+        
+        /* إظهار الزرار داخل القائمة المنسدلة بدلاً من الهيدر (اختياري) */
+        .main-nav.active::after {
+            content: 'Book Your Free Trial';
+            display: block;
+            text-align: center;
+            padding: 15px;
+            margin: 10px 20px;
+            background: #e67e22;
+            color: white;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+    }
+    
     /* تصميم متجاوب */
     @media (max-width: 1100px) {
-        .main-nav ul {
+        .nav-list {
             gap: 8px;
         }
         
@@ -264,7 +337,7 @@
     }
     
     @media (max-width: 992px) {
-        .main-nav ul {
+        .nav-list {
             gap: 6px;
         }
         
@@ -317,7 +390,7 @@
             z-index: 1000;
         }
         
-        .main-nav.active ul {
+        .main-nav.active .nav-list {
             flex-direction: column;
             gap: 15px;
         }
@@ -338,8 +411,20 @@
                 inset -3px -3px 6px rgba(230, 126, 34, 0.4);
         }
         
-        .main-nav li:not(:last-child)::after {
+        .main-nav.active .nav-item:not(:last-child)::after {
             display: none;
+        }
+        
+        .mobile-nav-toggle[aria-expanded="true"] span:first-child {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        
+        .mobile-nav-toggle[aria-expanded="true"] span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .mobile-nav-toggle[aria-expanded="true"] span:last-child {
+            transform: rotate(-45deg) translate(7px, -6px);
         }
     }
 </style>
@@ -404,15 +489,17 @@
         
         // Mobile menu toggle
         const mobileToggle = document.querySelector('.mobile-nav-toggle');
-        const mainNav = document.querySelector('.main-nav');
+        const menu = document.querySelector('.main-nav');
         
-        if (mobileToggle && mainNav) {
+        if (mobileToggle && menu) {
             mobileToggle.addEventListener('click', function() {
-                mainNav.classList.toggle('active');
+                const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', !isExpanded);
+                menu.classList.toggle('active');
                 
                 // Animate hamburger icon
                 const spans = this.querySelectorAll('span');
-                if (mainNav.classList.contains('active')) {
+                if (menu.classList.contains('active')) {
                     spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
                     spans[1].style.opacity = '0';
                     spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
@@ -425,8 +512,21 @@
             
             // Close menu when clicking outside
             document.addEventListener('click', function(event) {
-                if (!mainNav.contains(event.target) && !mobileToggle.contains(event.target)) {
-                    mainNav.classList.remove('active');
+                if (!menu.contains(event.target) && !mobileToggle.contains(event.target) && menu.classList.contains('active')) {
+                    menu.classList.remove('active');
+                    mobileToggle.setAttribute('aria-expanded', 'false');
+                    const spans = mobileToggle.querySelectorAll('span');
+                    spans[0].style.transform = 'none';
+                    spans[1].style.opacity = '1';
+                    spans[2].style.transform = 'none';
+                }
+            });
+            
+            // Close menu when pressing Escape key
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape' && menu.classList.contains('active')) {
+                    menu.classList.remove('active');
+                    mobileToggle.setAttribute('aria-expanded', 'false');
                     const spans = mobileToggle.querySelectorAll('span');
                     spans[0].style.transform = 'none';
                     spans[1].style.opacity = '1';
@@ -436,3 +536,4 @@
         }
     });
 </script>
+</header>
