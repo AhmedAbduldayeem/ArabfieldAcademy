@@ -149,24 +149,38 @@ document.addEventListener("DOMContentLoaded", function() {
         const footerText = document.querySelector("#footer-text");
         if (footerText) footerText.innerHTML = config.footerText;
 
-        document.addEventListener('click', function(event) {
-            const target = event.target;
-            if (target.closest('.mobile-nav-toggle')) {
-                document.querySelector('.mobile-nav-toggle')?.classList.toggle('active');
-                document.querySelector('.header-right-content')?.classList.toggle('active');
+        // --- START: MODIFIED CLICK HANDLER ---
+        // عند الضغط على زر الموبايل
+        document.addEventListener('click', function(e) {
+            const toggleBtn = document.querySelector('.mobile-nav-toggle');
+            const menuContainer = document.querySelector('.header-right-content');
+
+            // لو الضغط حصل على الزر
+            if (e.target.closest('.mobile-nav-toggle')) {
+                menuContainer.classList.toggle('active');
+                toggleBtn.classList.toggle('active');
+            } 
+            // لو الضغط حصل برا المنيو.. اقفلها
+            else if (!e.target.closest('.header-right-content')) {
+                menuContainer?.classList.remove('active');
+                toggleBtn?.classList.remove('active');
             }
-            if (target.closest('#contact-us-link')) {
-                event.preventDefault();
+            
+            // الأحداث الأخرى الأصلية
+            if (e.target.closest('#contact-us-link')) {
+                e.preventDefault();
                 document.getElementById('contact-modal')?.classList.add('active');
             }
-            if (target.closest('.modal-close-btn') || target.matches('.contact-modal')) {
+            if (e.target.closest('.modal-close-btn') || e.target.matches('.contact-modal')) {
                 document.getElementById('contact-modal')?.classList.remove('active');
             }
-            if (target.closest('#scroll-to-top')) {
-                event.preventDefault();
+            if (e.target.closest('#scroll-to-top')) {
+                e.preventDefault();
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
         });
+        // --- END: MODIFIED CLICK HANDLER ---
+        
         const scrollTopBtn = document.getElementById('scroll-to-top');
         if (scrollTopBtn) {
             window.addEventListener('scroll', () => {
@@ -207,4 +221,32 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // --- START THE APP ---
     initialize();
+});
+
+// كود تشغيل القائمة البديل
+document.addEventListener('app-loaded', () => {
+    const navMenu = document.querySelector('.main-nav ul');
+    const toggleBtn = document.querySelector('.mobile-nav-toggle');
+    const navContainer = document.querySelector('.main-nav');
+
+    // تأكد إن الروابط مكتوبة حتى لو الـ fetch فشل
+    if (navMenu && navMenu.children.length === 0) {
+        navMenu.innerHTML = `
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About Us</a></li>
+            <li><a href="programs.html" class="nav-link">Our Programs</a></li>
+            <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+            <li><a href="blog.html" class="nav-link">Blog</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+        `;
+    }
+
+    // تشغيل الزرار
+    if (toggleBtn && navContainer) {
+        toggleBtn.onclick = (e) => {
+            e.preventDefault();
+            navContainer.classList.toggle('active');
+            console.log("Menu state:", navContainer.classList.contains('active'));
+        };
+    }
 });
