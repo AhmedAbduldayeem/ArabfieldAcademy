@@ -18,20 +18,33 @@
 /* --- General Body and HTML Styles --- */
 html {
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 body {
     font-family: var(--font-main);
     margin: 0;
+    padding: 0;
     background-color: var(--background-color);
     color: var(--dark-color);
     line-height: 1.6;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .container {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* --- Header Styles --- */
@@ -45,6 +58,9 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .header-logo-wrapper {
@@ -52,6 +68,8 @@ body {
     display: flex;
     align-items: center;
     gap: 15px;
+    flex-shrink: 0;
+    min-width: fit-content;
 }
 
 .logo-image {
@@ -66,16 +84,48 @@ body {
     line-height: 1.1;
 }
 
+/* تعديل الشعار - نفس اللون والحجم، Academy مش سميكة */
 .logo-english {
     font-size: 24px;
     font-weight: 700;
     color: var(--primary-blue);
+    white-space: normal;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+    text-align: left;
+}
+
+.logo-english .first-line {
+    font-size: 22px; /* زيادة من 20px إلى 22px */
+    font-weight: 700; /* سميك */
+    color: var(--primary-blue); /* نفس اللون */
+    display: block;
+}
+
+.logo-english .second-line {
+    font-size: 22px; /* نفس حجم الأول - زيادة من 18px إلى 22px */
+    font-weight: 400; /* مش سميك - تغيير من 500 إلى 400 */
+    color: var(--primary-blue); /* نفس اللون - تغيير من البرتقالي للأزرق */
+    display: block;
+    margin-top: 2px;
 }
 
 .header-right-content {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
+    flex-grow: 1;
+    justify-content: space-between;
+    min-width: 0;
+}
+
+.main-nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    overflow: visible;
+    min-width: 0;
 }
 
 .main-nav ul {
@@ -83,26 +133,65 @@ body {
     padding: 0;
     list-style: none;
     display: flex;
-    gap: 25px;
+    gap: 0;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+    min-width: 0;
+}
+
+.main-nav li {
+    flex-shrink: 0;
+    position: relative;
+}
+
+/* إضافة الفاصل الرأسي بعد كل عنصر ماعدا الأخير */
+.main-nav li:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 16px;
+    width: 1px;
+    background-color: rgba(10, 77, 104, 0.2);
+    transition: background-color 0.3s;
+}
+
+.main-nav li:hover:not(:last-child)::after {
+    background-color: var(--secondary-orange);
+    opacity: 0.5;
 }
 
 .main-nav a {
     text-decoration: none;
     color: var(--dark-color);
-    font-weight: 500;
-    padding: 5px 10px;
+    font-weight: 600;
+    padding: 8px 16px;
     border-radius: 5px;
-    transition: color .3s;
+    transition: color .3s, background-color .3s;
+    font-size: 15px;
+    white-space: nowrap;
+    display: inline-block;
+    flex-shrink: 0;
+    letter-spacing: 0.2px;
 }
 
 .main-nav a.active,
 .main-nav a:hover {
     color: var(--secondary-orange);
+    background-color: rgba(245, 124, 0, 0.05);
 }
 
 .btn-register-header {
     padding: 8px 20px;
     font-size: 15px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-left: auto;
+    font-weight: 600;
 }
 
 /* --- Mobile Navigation --- */
@@ -132,6 +221,8 @@ body {
     overflow: hidden;
     z-index: 1;
     background-color: var(--primary-blue);
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .hero-section::before {
@@ -184,6 +275,8 @@ body {
 /* --- General Section and Component Styles --- */
 .section {
     padding: 80px 20px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .section-title {
@@ -312,10 +405,89 @@ body {
     box-shadow: 0 0 0 3px rgba(10, 77, 104, .2);
 }
 
-/* --- Responsive Styles --- */
-@media (max-width:992px) {
+/* --- تحسينات للشاشات المتوسطة --- */
+@media (min-width: 993px) and (max-width: 1200px) {
     .main-header {
-        padding: 10px 20px;
+        padding: 10px 25px;
+        gap: 15px;
+    }
+    
+    .main-nav a {
+        font-size: 14px;
+        padding: 7px 14px;
+        font-weight: 600;
+    }
+    
+    .btn-register-header {
+        padding: 8px 16px;
+        font-size: 14px;
+        font-weight: 600;
+    }
+    
+    .logo-english .first-line {
+        font-size: 20px; /* تقليل من 22px إلى 20px */
+    }
+    
+    .logo-english .second-line {
+        font-size: 20px; /* نفس الحجم - تقليل من 22px إلى 20px */
+        font-weight: 400; /* مش سميك */
+    }
+    
+    .logo-image {
+        height: 45px;
+    }
+    
+    .main-nav li:not(:last-child)::after {
+        height: 14px;
+    }
+}
+
+/* --- تحسينات للشاشات الكبيرة جداً --- */
+@media (min-width: 1201px) and (max-width: 1400px) {
+    .main-nav a {
+        font-size: 15px;
+        padding: 8px 15px;
+        font-weight: 600;
+    }
+    
+    .main-nav li:not(:last-child)::after {
+        height: 15px;
+    }
+    
+    .logo-english .first-line {
+        font-size: 21px; /* تقليل طفيف من 22px إلى 21px */
+    }
+    
+    .logo-english .second-line {
+        font-size: 21px; /* نفس الحجم - تقليل طفيف من 22px إلى 21px */
+        font-weight: 400; /* مش سميك */
+    }
+}
+
+/* --- Responsive Styles --- */
+@media (max-width: 992px) {
+    html, body {
+        width: 100vw;
+        overflow-x: hidden;
+        position: relative;
+        left: 0;
+        right: 0;
+    }
+    
+    body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main-header {
+        padding: 10px 15px;
+        gap: 10px;
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+        left: 0;
+        right: 0;
     }
 
     .header-right-content {
@@ -328,36 +500,86 @@ body {
         box-shadow: -5px 0 15px rgba(0, 0, 0, .1);
         flex-direction: column;
         align-items: flex-start;
-        padding: 80px 30px 30px;
+        padding: 80px 20px 30px;
         transition: right .4s ease-in-out;
         gap: 30px;
+        max-width: 280px;
+        justify-content: flex-start;
+        box-sizing: border-box;
     }
 
     .header-right-content.active {
         right: 0;
     }
 
+    .main-nav {
+        flex-grow: 0;
+        width: 100%;
+        justify-content: flex-start;
+        box-sizing: border-box;
+    }
+
     .main-nav ul {
         flex-direction: column;
-        gap: 15px;
+        gap: 0;
         width: 100%;
+        white-space: normal;
+        align-items: flex-start;
+        padding: 0;
+        margin: 0;
+    }
+
+    .main-nav li {
+        width: 100%;
+        position: relative;
+    }
+    
+    .main-nav li:not(:last-child)::after {
+        display: none;
+    }
+    
+    .main-nav li:not(:last-child)::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: rgba(0, 0, 0, 0.05);
     }
 
     .main-nav a {
         display: block;
-        padding: 10px 0;
-        font-size: 18px;
+        padding: 12px 0;
+        font-size: 16px;
+        white-space: normal;
+        width: 100%;
+        font-size: 15px;
+        box-sizing: border-box;
+        font-weight: 500;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    .main-nav a:hover {
+        background-color: rgba(245, 124, 0, 0.08);
     }
 
     .btn-register-header {
         width: 100%;
         text-align: center;
         padding: 12px;
-        font-size: 16px;
+        font-size: 15px;
+        white-space: normal;
+        margin-left: 0;
+        box-sizing: border-box;
+        font-weight: 600;
     }
 
     .mobile-nav-toggle {
         display: block;
+        order: 3;
+        margin-left: 10px;
+        flex-shrink: 0;
     }
 
     .mobile-nav-toggle.active span:nth-child(1) {
@@ -370,6 +592,172 @@ body {
 
     .mobile-nav-toggle.active span:nth-child(3) {
         transform: rotate(-45deg) translate(7px, -6px);
+    }
+    
+    .header-logo-wrapper {
+        flex-grow: 1;
+        min-width: auto;
+        max-width: calc(100% - 60px);
+    }
+    
+    /* تعديلات الشعار على الموبايل */
+    .logo-english {
+        line-height: 1;
+    }
+    
+    .logo-english .first-line {
+        font-size: 18px; /* زيادة من 16px إلى 18px */
+        font-weight: 700; /* سميك */
+    }
+    
+    .logo-english .second-line {
+        font-size: 18px; /* نفس الحجم - زيادة من 14px إلى 18px */
+        font-weight: 400; /* مش سميك */
+        margin-top: 1px;
+        color: var(--primary-blue); /* نفس اللون */
+    }
+    
+    .logo-image {
+        height: 40px;
+    }
+    
+    .section {
+        padding: 60px 15px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .hero-section {
+        padding: 60px 15px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .container {
+        padding: 0 15px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+/* --- تحسينات للشاشات الكبيرة --- */
+@media (min-width: 993px) {
+    .main-header {
+        flex-wrap: nowrap;
+    }
+    
+    .header-logo-wrapper {
+        max-width: 250px;
+    }
+    
+    .header-right-content {
+        flex-wrap: nowrap;
+        overflow: hidden;
+    }
+    
+    .main-nav ul {
+        flex-shrink: 1;
+    }
+    
+    .main-nav li {
+        padding: 0 2px;
+    }
+}
+
+/* --- تحسينات للشاشات الصغيرة جداً --- */
+@media (max-width: 480px) {
+    .main-header {
+        padding: 8px 12px;
+        width: 100vw;
+        max-width: 100vw;
+        left: 0;
+        right: 0;
+    }
+    
+    .logo-image {
+        height: 40px;
+    }
+    
+    .logo-english .first-line {
+        font-size: 16px; /* زيادة من 14px إلى 16px */
+        font-weight: 700; /* سميك */
+        line-height: 1;
+    }
+    
+    .logo-english .second-line {
+        font-size: 16px; /* نفس الحجم - زيادة من 12px إلى 16px */
+        font-weight: 400; /* مش سميك */
+        line-height: 1;
+        margin-top: 1px;
+        color: var(--primary-blue); /* نفس اللون */
+    }
+    
+    .mobile-nav-toggle {
+        margin-left: 8px;
+    }
+    
+    .mobile-nav-toggle span {
+        width: 20px;
+        height: 2px;
+    }
+    
+    .header-logo-wrapper {
+        max-width: calc(100vw - 80px);
+    }
+}
+
+/* --- تحسينات للشاشات 360px --- */
+@media (max-width: 360px) {
+    html, body {
+        min-width: 320px;
+    }
+    
+    .logo-english .first-line {
+        font-size: 15px; /* زيادة من 13px إلى 15px */
+        font-weight: 700; /* سميك */
+    }
+    
+    .logo-english .second-line {
+        font-size: 15px; /* نفس الحجم - زيادة من 11px إلى 15px */
+        font-weight: 400; /* مش سميك */
+        color: var(--primary-blue); /* نفس اللون */
+    }
+    
+    .logo-image {
+        height: 35px;
+    }
+    
+    .mobile-nav-toggle span {
+        width: 18px;
+        height: 2px;
+    }
+    
+    .main-header {
+        padding: 8px 10px;
+    }
+}
+
+/* --- تحسين الوضوح على الشاشات الكبيرة جداً --- */
+@media (min-width: 1401px) {
+    .main-nav a {
+        font-size: 16px;
+        padding: 8px 18px;
+    }
+    
+    .btn-register-header {
+        font-size: 16px;
+        padding: 10px 22px;
+    }
+    
+    .logo-english .first-line {
+        font-size: 24px; /* زيادة من 22px إلى 24px */
+        font-weight: 700; /* سميك */
+    }
+    
+    .logo-english .second-line {
+        font-size: 24px; /* نفس الحجم - زيادة من 22px إلى 24px */
+        font-weight: 400; /* مش سميك */
     }
 }
 
@@ -413,6 +801,8 @@ body {
     background-color: var(--dark-color);
     color: #e0e0e0;
     padding: 60px 20px 20px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .footer-grid {
@@ -650,46 +1040,33 @@ body {
     color: #777;
 }
 
-/* ==== الكود الجديد للموبايل (768px) ==== */
-@media (max-width: 768px) {
-    /* إظهار حاوية المنيو */
-    .main-nav.active {
-        display: block !important;
-        position: absolute !important;
-        top: 70px !important;
-        left: 0 !important;
-        width: 100% !important;
-        background: white !important;
-        z-index: 99999 !important;
-        height: auto !important; /* عشان متكنش صغيرة */
-        min-height: 250px !important; /* ضمان مساحة للروابط */
-    }
+/* --- إصلاحات نهائية لمنع الهوامش البيضاء --- */
+* {
+    box-sizing: border-box;
+}
 
-    /* إجبار القائمة الداخلية (الروابط) على الظهور */
-    .main-nav.active ul {
-        display: flex !important;
-        flex-direction: column !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        padding: 20px !important;
-        margin: 0 !important;
-        list-style: none !important;
-    }
+img, video, iframe {
+    max-width: 100%;
+    height: auto;
+}
 
-    /* إظهار كل رابط لوحده */
-    .main-nav.active ul li {
-        display: block !important;
-        width: 100% !important;
-        margin: 10px 0 !important;
-    }
+.main-header,
+.hero-section,
+.section,
+.container,
+.footer-grid,
+.main-footer {
+    box-sizing: border-box;
+}
 
-    .main-nav.active ul li a {
-        display: block !important;
-        color: #0a4d68 !important; /* اللون الأزرق */
-        font-size: 18px !important;
-        text-align: center !important;
-        padding: 10px !important;
-        text-decoration: none !important;
+@media (max-width: 992px) {
+    * {
+        max-width: 100vw;
+    }
+    
+    body > *:not(script):not(style) {
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
     }
 }
-/* ==== نهاية الكود الجديد ==== */
