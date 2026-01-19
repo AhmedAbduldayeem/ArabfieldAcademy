@@ -3,7 +3,7 @@
         <div class="footer-col">
             <div class="footer-brand-container">
                 <a href="index.html" class="footer-logo-wrapper">
-                    <img src="images/Logo.jpg" alt="Arabfield Academy Logo" class="footer-logo">
+                    <img src="images/Logo.jpg" alt="Arabfield Academy Logo" class="footer-logo" loading="eager">
                     <span>Arabfield Academy</span>
                 </a>
                 <p class="footer-slogan">Plant the language, Harvest the culture</p>
@@ -34,35 +34,37 @@
             <div class="footer-social-icons">
                 <!-- Facebook -->
                 <a href="https://www.facebook.com/profile.php?id=61581000035762" target="_blank" class="footer-social-icon" title="Facebook">
-                    <img src="images/facebook.jpg" alt="Facebook">
+                    <img src="images/facebook.jpg" alt="Facebook" loading="eager">
                 </a>
                 <!-- Instagram -->
                 <a href="https://www.instagram.com/arabfield.academy" target="_blank" class="footer-social-icon" title="Instagram">
-                    <img src="images/instagram.jpg" alt="Instagram">
+                    <img src="images/instagram.jpg" alt="Instagram" loading="eager">
                 </a>
                 <!-- WhatsApp -->
                 <a href="https://wa.me/2001508601333" target="_blank" class="footer-social-icon" title="WhatsApp">
-                    <img src="images/whatsapp.jpg" alt="WhatsApp">
+                    <img src="images/whatsapp.jpg" alt="WhatsApp" loading="eager">
                 </a>
                 <!-- LinkedIn -->
                 <a href="https://www.linkedin.com/company/109731388/admin/dashboard/" target="_blank" class="footer-social-icon" title="LinkedIn">
-                    <img src="images/linkedin.jpg" alt="LinkedIn">
+                    <img src="images/linkedin.jpg" alt="LinkedIn" loading="eager">
                 </a>
                 <!-- Email -->
                 <a href="mailto:Arabfield.Academy@gmail.com" target="_blank" class="footer-social-icon" title="Email">
-                    <img src="images/gmail.jpg" alt="Email">
+                    <img src="images/gmail.jpg" alt="Email" loading="eager">
                 </a>
             </div>
             
             <!-- QR Code - متمركز بشكل متناسق -->
             <div class="qr-code-section">
-                <div class="qr-code-container">
-                    <img src="images/qr.jpg" alt="QR Code" class="qr-code-image">
-                    <div class="qr-code-info">
-                        <p class="qr-title">Scan QR Code</p>
-                        <p class="qr-desc">For all contact information</p>
+                <a href="https://link.gettap.co/arabfieldacademy" target="_blank" class="qr-code-link">
+                    <div class="qr-code-container">
+                        <img src="images/qr.jpg" alt="QR Code" class="qr-code-image" loading="eager">
+                        <div class="qr-code-info">
+                            <p class="qr-title">Scan QR Code</p>
+                            <p class="qr-desc">For all contact information</p>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </div>
@@ -163,6 +165,13 @@
         margin-top: 10px;
     }
     
+    .qr-code-link {
+        text-decoration: none;
+        display: block;
+        width: 100%;
+        max-width: 220px;
+    }
+    
     .qr-code-container {
         display: flex;
         flex-direction: column;
@@ -173,8 +182,16 @@
         border-radius: 12px;
         border: 1px solid rgba(255, 255, 255, 0.1);
         width: 100%;
-        max-width: 220px;
         text-align: center;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+    
+    .qr-code-container:hover {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(255, 255, 255, 0.2);
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
     }
     
     .qr-code-image {
@@ -288,6 +305,10 @@
             height: 20px;
         }
         
+        .qr-code-link {
+            max-width: 200px;
+        }
+        
         .qr-code-container {
             max-width: 200px;
         }
@@ -306,6 +327,10 @@
         
         .footer-logo-wrapper {
             justify-content: center;
+        }
+        
+        .qr-code-link {
+            max-width: 180px;
         }
         
         .qr-code-container {
