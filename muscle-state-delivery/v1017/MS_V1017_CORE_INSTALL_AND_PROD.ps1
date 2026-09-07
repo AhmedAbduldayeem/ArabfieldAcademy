@@ -31,8 +31,8 @@ $patch=Join-Path $tmp 'ms-v1017-core-patch.js'
 $ok=$false
 try{
   $b64=''
-  1..6 | ForEach-Object {
-    $n=$_.ToString('00')
+  @('01','02','03','04a','04b','05a','05b','06') | ForEach-Object {
+    $n=$_
     $u=$base+'/core-patch.b64.'+$n
     $p=Join-Path $tmp ('core-patch.b64.'+$n)
     Invoke-WebRequest -UseBasicParsing -Uri $u -OutFile $p -TimeoutSec 60
