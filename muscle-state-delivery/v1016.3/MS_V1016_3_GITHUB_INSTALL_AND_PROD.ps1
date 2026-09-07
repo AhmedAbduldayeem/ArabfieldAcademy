@@ -13,20 +13,30 @@ foreach($f in $tracked){
 }
 Write-Host '=== MUSCLE STATE v1016.3 FINAL ==='
 Write-Host ('ROLLBACK='+$rb)
-function Download-Verified([string]$url,[string]$path,[string]$sha){
+function Get-GitBlobSha1([string]$path){
+  $bytes=[IO.File]::ReadAllBytes($path)
+  $header=[Text.Encoding]::ASCII.GetBytes([string]::Concat('blob ',$bytes.Length.ToString(),[char]0))
+  $all=New-Object byte[] ($header.Length+$bytes.Length)
+  [Buffer]::BlockCopy($header,0,$all,0,$header.Length)
+  [Buffer]::BlockCopy($bytes,0,$all,$header.Length,$bytes.Length)
+  $sha1=[Security.Cryptography.SHA1]::Create()
+  try{$hash=$sha1.ComputeHash($all)}finally{$sha1.Dispose()}
+  return ([BitConverter]::ToString($hash)).Replace('-','').ToLowerInvariant()
+}
+function Download-Verified([string]$url,[string]$path,[string]$blobSha){
   Invoke-WebRequest -UseBasicParsing -Uri $url -OutFile $path -TimeoutSec 60
-  $h=(Get-FileHash -LiteralPath $path -Algorithm SHA256).Hash.ToLowerInvariant()
-  Write-Host ((Split-Path $path -Leaf)+'_SHA256='+$h)
-  if($h -ne $sha){throw ('SHA_MISMATCH '+(Split-Path $path -Leaf)+' '+$h)}
+  $h=Get-GitBlobSha1 $path
+  Write-Host ((Split-Path $path -Leaf)+'_GIT_BLOB_SHA1='+$h)
+  if($h -ne $blobSha){throw ('GIT_BLOB_MISMATCH '+(Split-Path $path -Leaf)+' '+$h)}
 }
 $runtime=Join-Path $root 'assets\js\ms-v1016-3-runtime.js'
 $css=Join-Path $root 'assets\css\ms-v1016-3.css'
 $patch=Join-Path $env:TEMP 'MS_V1016_3_HTML_PATCH.js'
 $ok=$false
 try{
-  Download-Verified ($base+'/ms-v1016-3-runtime.js') $runtime '6b4805cefd02da50e1f162e529a5d33f2bba779f2440d2aace32ad829c16af7a'
-  Download-Verified ($base+'/ms-v1016-3.css') $css '1316b839300a2e2a279656eda0dbf1e37e43f9ba7793a31580a5caca141b0cf0'
-  Download-Verified ($base+'/ms-v1016-3-html-patch.js') $patch 'a544bead693722c98c0c463f736df629f7032b438f36f05489b361b1b110c10d'
+  Download-Verified ($base+'/ms-v1016-3-runtime.js') $runtime 'fd31c02390694349863a609b7c94d32a883d454f'
+  Download-Verified ($base+'/ms-v1016-3.css') $css 'f7aa72cd5e6a2bfcf35fc97a7ed3d4e16bb2c541'
+  Download-Verified ($base+'/ms-v1016-3-html-patch.js') $patch 'a442086ccd15d57c1728b344e5f9326a95cabab6'
   node --check $runtime
   if($LASTEXITCODE -ne 0){throw 'RUNTIME_NODE_CHECK_FAILED'}
   node --check $patch
