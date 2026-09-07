@@ -40,8 +40,8 @@ if(read('app.html').includes('id="demoPlanCard"'))throw new Error('DEMO_CARD_REM
 const pwa=path.join(root,'assets/js/pwa.js');
 if(fs.existsSync(pwa)){
  let ps=fs.readFileSync(pwa,'utf8');
- if(!/const VERSION='985';/.test(ps)&&!/const VERSION='10164';/.test(ps))throw new Error('PWA_VERSION_ANCHOR_MISSING');
- ps=ps.replace(/const VERSION='985';/,"const VERSION='10164';");
+ if(!/const VERSION='\d+';/.test(ps))throw new Error('PWA_VERSION_ANCHOR_MISSING');
+ ps=ps.replace(/const VERSION='\d+';/,"const VERSION='10164';");
  fs.writeFileSync(pwa,ps,'utf8');
  if(!fs.readFileSync(pwa,'utf8').includes("const VERSION='10164';"))throw new Error('PWA_VERSION_PATCH_FAILED');
 }
