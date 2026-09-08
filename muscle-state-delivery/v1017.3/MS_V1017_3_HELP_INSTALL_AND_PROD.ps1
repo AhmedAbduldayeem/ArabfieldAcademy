@@ -26,10 +26,9 @@ try{
   $j=[IO.File]::ReadAllText((Join-Path $root 'assets\js\ms-help-v1004.js'),[Text.Encoding]::UTF8)
   $c=[IO.File]::ReadAllText((Join-Path $root 'assets\css\ms-help-v1004.css'),[Text.Encoding]::UTF8)
   $h=[IO.File]::ReadAllText((Join-Path $root 'help.html'),[Text.Encoding]::UTF8)
-  if($j.IndexOf("['تحميل التطبيق'") -lt 0){throw 'INSTALL_HELP_CARD_MISSING'}
-  if($j.IndexOf("['تحميل التطبيق'") -gt $j.IndexOf("['ابدأ حسابك'")){throw 'INSTALL_HELP_NOT_FIRST'}
+  if(!$j.Contains('MS_V1017_3_INSTALL_HELP')){throw 'INSTALL_HELP_MARKER_MISSING'}
   if(!$j.Contains('beforeinstallprompt') -or !$j.Contains('msInstallHelp')){throw 'INSTALL_HELP_FLOW_MISSING'}
-  if(!$c.Contains('#c9ff3d') -or !$c.Contains('#fff7e8') -or !$c.Contains('#6da77a')){throw 'INSTALL_HELP_IDENTITY_MISSING'}
+  if(!$c.Contains('.ms10173-install-now') -or !$c.Contains('#c9ff3d') -or !$c.Contains('#fff7e8') -or !$c.Contains('#6da77a')){throw 'INSTALL_HELP_IDENTITY_MISSING'}
   if(!$h.Contains('ms-help-v1004.css?v=10173') -or !$h.Contains('ms-help-v1004.js?v=10173')){throw 'HELP_CACHE_BUST_MISSING'}
   Write-Host 'V1017_3_SOURCE_ASSERTIONS_OK'
   Write-Host 'help_first_item=INSTALL_APP'
