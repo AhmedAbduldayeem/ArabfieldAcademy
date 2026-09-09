@@ -19,7 +19,7 @@ $ok=$false
 try{
  $vp=Join-Path $root '.vercel\project.json';if(Test-Path -LiteralPath $vp){$vj=[IO.File]::ReadAllText($vp,[Text.Encoding]::UTF8);if(!$vj.Contains('prj_IAbEITc4LtYxnRvZdi8VKKWlrhYT')){throw 'WRONG_VERCEL_PROJECT'}}
  Download-Verified $base16 'ms-v101816-balanced-plans.json' $plans 'a5a70f30f03e69b01f86addca89eea0058d39cbf'
- Download-Verified $base18 'ms-v101818-browser-balance-patch.js' $patch '7ed34648861bd57fe714fa741cfd097960dffaff'
+ Download-Verified $base18 'ms-v101818-browser-balance-patch.js' $patch 'a2a7ed4786c530de2c5c96e8346290bdae175ca6'
  Download-Verified $base18 'ms-v101818-training-qa.js' $qa 'c1dbc675aa6ea21e1222ebffc72db66a312a4884'
  node --check $patch;if($LASTEXITCODE -ne 0){throw 'PATCH_NODE_CHECK_FAILED'}
  node --check $qa;if($LASTEXITCODE -ne 0){throw 'QA_NODE_CHECK_FAILED'}
@@ -35,7 +35,9 @@ try{
  $pwa=[IO.File]::ReadAllText((Join-Path $root 'assets\js\pwa.js'),[Text.Encoding]::UTF8)
  $sw=[IO.File]::ReadAllText((Join-Path $root 'sw.js'),[Text.Encoding]::UTF8)
  if(!$css.Contains('V101818_BROWSER_DOCK_FINAL_OVERRIDE') -or !$css.Contains('.ms101815-bottom-nav,.mobile-nav.ms938-nav{display:none!important}') -or !$css.Contains('.ms101815-bottom-nav{display:grid!important}')){throw 'BROWSER_DOCK_FINAL_OVERRIDE_ASSERTION_FAILED'}
+ if(!$css.Contains('#ms101815QuickAccessBtn{min-height:64px!important;min-width:196px!important') -or !$css.Contains('background:#c9ff3d!important') -or !$css.Contains('.ms101815-quick-copy{display:grid!important')){throw 'BROWSER_QUICK_ACCESS_STYLE_ASSERTION_FAILED'}
  if(!$runtime.Contains("const MOBILE=window.matchMedia('(max-width:980px)');") -or !$runtime.Contains('if(!MOBILE.matches){n?.remove();return}') -or !$runtime.Contains("MOBILE.addEventListener?.('change',repair)")){throw 'BROWSER_DOCK_RUNTIME_ASSERTION_FAILED'}
+ if(!$runtime.Contains("b.id='ms101815QuickAccessBtn'") -or !$runtime.Contains("background:'#c9ff3d'")){throw 'BROWSER_QUICK_ACCESS_RUNTIME_ASSERTION_FAILED'}
  foreach($h in @($app,$weights,$programs)){if(!$h.Contains('assets/js/data.js?v=101818')){throw 'DATA_CACHE_REF_101818_MISSING'}}
  foreach($h in @($app,$weights)){if(!$h.Contains('ms-v101815-clean-mobile.css?v=101818') -or !$h.Contains('ms-v101815-clean-mobile.js?v=101818')){throw 'CLEAN_MOBILE_CACHE_REF_101818_MISSING'}}
  if(!$pwa.Contains("const VERSION='101818';")){throw 'PWA_VERSION_101818_MISSING'}
@@ -43,6 +45,7 @@ try{
  Write-Host 'V1018_18_SOURCE_ASSERTIONS_OK'
  Write-Host 'desktop_broken_mobile_buttons=REMOVED_BY_FINAL_OVERRIDE'
  Write-Host 'mobile_bottom_nav=MOBILE_ONLY'
+ Write-Host 'browser_quick_access=FLUORESCENT_LIME_FIXED'
  Write-Host 'training_programs=13'
  Write-Host 'training_sessions=55'
  Write-Host 'corrected_days=RECOMP_UPPER_RECOMP_UPPER_CARDIO_FATLOSS_UPPER'
@@ -77,7 +80,8 @@ if($ok){
  if([string]::IsNullOrWhiteSpace($liveApp) -or [string]::IsNullOrWhiteSpace($liveData)){throw 'PRODUCTION_FETCH_FAILED'}
  if(!$liveApp.Contains('assets/js/data.js?v=101818') -or !$liveApp.Contains('ms-v101815-clean-mobile.css?v=101818') -or !$liveApp.Contains('ms-v101815-clean-mobile.js?v=101818')){throw 'PRODUCTION_APP_REFS_FAILED'}
  if(!$liveCss.Contains('V101818_BROWSER_DOCK_FINAL_OVERRIDE') -or !$liveCss.Contains('.ms101815-bottom-nav,.mobile-nav.ms938-nav{display:none!important}') -or !$liveCss.Contains('.ms101815-bottom-nav{display:grid!important}')){throw 'PRODUCTION_DOCK_OVERRIDE_FAILED'}
- if(!$liveRuntime.Contains('if(!MOBILE.matches){n?.remove();return}')){throw 'PRODUCTION_RUNTIME_DOCK_GUARD_FAILED'}
+ if(!$liveCss.Contains('#ms101815QuickAccessBtn{min-height:64px!important;min-width:196px!important') -or !$liveCss.Contains('background:#c9ff3d!important')){throw 'PRODUCTION_QUICK_ACCESS_STYLE_FAILED'}
+ if(!$liveRuntime.Contains('if(!MOBILE.matches){n?.remove();return}') -or !$liveRuntime.Contains("b.id='ms101815QuickAccessBtn'")){throw 'PRODUCTION_RUNTIME_GUARD_FAILED'}
  if(!$liveSw.Contains('muscle-state-pwa-v101818')){throw 'PRODUCTION_SW_101818_FAILED'}
  $liveRoot=Join-Path $env:TEMP ('MS_V101818_LIVE_'+$stamp);$liveDataDir=Join-Path $liveRoot 'assets\js';New-Item -ItemType Directory -Force -Path $liveDataDir | Out-Null;[IO.File]::WriteAllText((Join-Path $liveDataDir 'data.js'),$liveData,[Text.Encoding]::UTF8)
  node $qa $liveRoot;if($LASTEXITCODE -ne 0){throw 'PRODUCTION_TRAINING_QA_FAILED'}
