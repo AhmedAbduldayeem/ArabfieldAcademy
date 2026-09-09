@@ -22,7 +22,7 @@ try{
  $vp=Join-Path $root '.vercel\project.json';if(Test-Path -LiteralPath $vp){$vj=[IO.File]::ReadAllText($vp,[Text.Encoding]::UTF8);if(!$vj.Contains('prj_IAbEITc4LtYxnRvZdi8VKKWlrhYT')){throw 'WRONG_VERCEL_PROJECT'}}
  Download-Verified 'ms-v101814-app-patch.js' $patch '86b5649594bf3b2e9583d42a80a2d436ef440d53'
  Download-Verified 'ms-v101814-quick-access-nav.js' $jsDest 'fb2cb1823cff2268c118e6c68483a48542735d77'
- Download-Verified 'ms-v101814-quick-access-nav.css' $cssDest 'cf1eccb7fc1ee7d94b86375bcc699afb1e032f2d'
+ Download-Verified 'ms-v101814-quick-access-nav.css' $cssDest '2274ee3b07b5feb700245fa8bf45d24f6362aa29'
  node --check $patch;if($LASTEXITCODE -ne 0){throw 'PATCH_NODE_CHECK_FAILED'}
  node --check $jsDest;if($LASTEXITCODE -ne 0){throw 'RUNTIME_NODE_CHECK_FAILED'}
  node $patch $root;if($LASTEXITCODE -ne 0){throw 'PATCH_EXEC_FAILED'}
@@ -39,15 +39,15 @@ try{
  if(!$h.Contains('ms101814-weight-cta') -or !$h.Contains('./weights.html#weightsWorkspace')){throw 'TRAINING_WEIGHT_CTA_MISSING'}
  if(!$h.Contains('ms-v101814-quick-access-nav.css?v=101814') -or !$h.Contains('ms-v101814-quick-access-nav.js?v=101814')){throw 'V101814_ASSET_REF_MISSING'}
  if(!$j.Contains('./pricing.html') -or !$j.Contains('ms101814QuickAccessBtn') -or !$j.Contains('ensureFoodFirst') -or !$j.Contains('enforceNav')){throw 'QUICK_ACCESS_RUNTIME_ASSERTION_FAILED'}
- if(!$c.Contains('min-height:58px') -or !$c.Contains('min-height:84px') -or !$c.Contains('#6da77a') -or !$c.Contains('#c9ff3d')){throw 'UX_STYLE_ASSERTION_FAILED'}
+ if(!$c.Contains('min-height:58px') -or !$c.Contains('min-height:84px') -or !$c.Contains('#6da77a') -or !$c.Contains('#c9ff3d') -or !$c.Contains('#ms101814QuickAccessBtn') -or !$c.Contains('background:var(--ms-lime)!important')){throw 'UX_STYLE_ASSERTION_FAILED'}
  if(!$h.Contains('assets/js/pwa.js?v=101814') -or !$p.Contains("const VERSION='101814';")){throw 'PWA_101814_MISSING'}
  Write-Host 'V1018_14_SOURCE_ASSERTIONS_OK'
  Write-Host 'bottom_nav=HOME_TRAINING_NUTRITION_LOCKED'
  Write-Host 'packages=QUICK_ACCESS_ONLY'
- Write-Host 'top_quick_access=ENLARGED_MULTI_DESTINATION'
+ Write-Host 'top_quick_access=FLUORESCENT_LIME_MULTI_DESTINATION'
  Write-Host 'weights_cta=TRAINING_PROMINENT'
  Write-Host 'food_photo=NUTRITION_FIRST_GUARDED'
- Write-Host 'identity=VANILLA_CREAM_FRESH_GREEN'
+ Write-Host 'identity=VANILLA_CREAM_FRESH_GREEN_LIME'
  Write-Host 'pwa_cache=101814'
  npm run check;if($LASTEXITCODE -ne 0){throw 'NPM_CHECK_FAILED'}
  npm run test:smoke;if($LASTEXITCODE -ne 0){throw 'SMOKE_FAILED'}
