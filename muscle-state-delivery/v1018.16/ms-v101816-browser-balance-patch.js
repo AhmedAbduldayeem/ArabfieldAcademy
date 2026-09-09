@@ -7,11 +7,14 @@ const write=(p,s)=>fs.writeFileSync(path.join(root,p),s,'utf8');
 const must=(v,m)=>{if(!v)throw Error(m)};
 const plans=JSON.parse(fs.readFileSync(plansPath,'utf8'));
 
-// A) Fix the browser/desktop leak: the mobile dock must not exist as raw buttons below the footer.
+// A) Fix the browser/desktop leak: neither the static mobile dock nor the runtime dock may render as raw buttons below the footer.
 let css=read('assets/css/ms-v101815-clean-mobile.css');
-if(!css.includes('.ms101815-bottom-nav{display:none!important}')){
-  css=css.replace('@media (max-width:980px){','.ms101815-bottom-nav{display:none!important}\n@media (max-width:980px){\n  .ms101815-bottom-nav{display:grid!important}');
+if(!css.includes('.mobile-nav.ms938-nav{display:none!important}')){
+  css=css.replace('@media (max-width:980px){','.mobile-nav.ms938-nav{display:none!important}\n.ms101815-bottom-nav{display:none!important}\n@media (max-width:980px){\n  .ms101815-bottom-nav{display:grid!important}');
+}else if(!css.includes('.ms101815-bottom-nav{display:none!important}')){
+  css=css.replace('.mobile-nav.ms938-nav{display:none!important}','.mobile-nav.ms938-nav{display:none!important}\n.ms101815-bottom-nav{display:none!important}');
 }
+must(css.includes('.mobile-nav.ms938-nav{display:none!important}'),'STATIC_MOBILE_DOCK_HIDE_PATCH_FAILED');
 must(css.includes('.ms101815-bottom-nav{display:none!important}'),'DESKTOP_DOCK_HIDE_PATCH_FAILED');
 must(css.includes('.ms101815-bottom-nav{display:grid!important}'),'MOBILE_DOCK_SHOW_PATCH_FAILED');
 write('assets/css/ms-v101815-clean-mobile.css',css);
