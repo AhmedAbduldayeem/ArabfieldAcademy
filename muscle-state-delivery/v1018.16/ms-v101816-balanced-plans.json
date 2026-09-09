@@ -1,0 +1,83 @@
+{
+  "foundation3": [
+    {"name":"Full Body A","items":[["squat","3 × 6–10"],["rdl","3 × 8–10"],["legcurl","2 × 10–15"],["bench","3 × 6–10"],["latpull","3 × 8–12"],["lateral","2 × 12–18"],["plank","3 جولات"]]},
+    {"name":"Full Body B","items":[["legpress","3 × 8–12"],["hipthrust","3 × 8–12"],["bulgarian","2 × 8–12 / رجل"],["inclinedb","3 × 8–12"],["seatedrow","3 × 8–12"],["facepull","2 × 12–18"],["crunch","3 × 10–15"]]},
+    {"name":"Full Body C","items":[["goblet","3 × 8–12"],["legext","2 × 10–15"],["seatedcurl","3 × 10–15"],["chestpress","3 × 8–12"],["pullup","3 × 5–10"],["dbshoulder","2 × 8–12"],["deadbug","3 جولات"]]}
+  ],
+  "upperlower4": [
+    {"name":"Upper A","items":[["bench","3 × 6–10"],["inclinedb","3 × 8–12"],["cablefly","2 × 12–15"],["latpull","3 × 8–12"],["chestrow","3 × 8–12"],["pullover","2 × 10–15"],["lateral","2 × 12–18"]]},
+    {"name":"Lower A","items":[["squat","3 × 6–10"],["legpress","3 × 8–12"],["legext","2 × 10–15"],["rdl","3 × 6–10"],["legcurl","3 × 10–15"],["hipthrust","3 × 8–12"],["calf","3 × 10–15"]]},
+    {"name":"Upper B","items":[["chestpress","3 × 8–12"],["dbflatbench","3 × 8–12"],["pecdeck","2 × 12–15"],["pullup","3 × 5–10"],["barrow","3 × 6–10"],["seatedrow","2 × 8–12"],["facepull","2 × 12–18"]]},
+    {"name":"Lower B","items":[["frontsquat","3 × 6–10"],["bulgarian","3 × 8–12 / رجل"],["hacksquat","2 × 8–12"],["seatedcurl","3 × 10–15"],["singlerdl","3 × 8–12 / رجل"],["cablekickback","2 × 12–15 / رجل"],["seatedcalf","3 × 10–15"]]}
+  ],
+  "ppl6": [
+    {"name":"Push A","items":[["bench","3 × 6–10"],["inclinedb","3 × 8–12"],["cablefly","2 × 12–15"],["ohpress","3 × 6–10"],["lateral","2 × 12–18"],["reversefly","2 × 12–18"],["pushdown","2 × 10–15"],["overheadtri","2 × 10–15"],["skullcrusher","2 × 10–15"]]},
+    {"name":"Pull A","items":[["latpull","3 × 6–10"],["barrow","3 × 6–10"],["pullover","2 × 10–15"],["barcurl","3 × 8–12"],["inclinecurl","2 × 10–15"],["hammer","2 × 10–15"],["facepull","2 × 12–18"]]},
+    {"name":"Legs A","items":[["squat","3 × 6–10"],["legpress","3 × 8–12"],["legext","2 × 10–15"],["rdl","3 × 6–10"],["legcurl","3 × 10–15"],["hipthrust","3 × 8–12"],["calf","3 × 10–15"]]},
+    {"name":"Push B","items":[["chestpress","3 × 8–12"],["dbflatbench","3 × 8–12"],["pecdeck","2 × 12–15"],["dbshoulder","3 × 8–12"],["cablelateral","2 × 12–18"],["facepull","2 × 12–18"],["closegripbench","2 × 6–10"],["ropeoverhead","2 × 10–15"],["singlepushdown","2 × 10–15 / يد"]]},
+    {"name":"Pull B","items":[["pullup","3 × 5–10"],["chestrow","3 × 8–12"],["seatedrow","2 × 8–12"],["cablecurl","3 × 10–15"],["preacher","2 × 10–15"],["crossbodyhammer","2 × 10–15"],["reversefly","2 × 12–18"]]},
+    {"name":"Legs B","items":[["frontsquat","3 × 6–10"],["bulgarian","3 × 8–12 / رجل"],["hacksquat","2 × 8–12"],["seatedcurl","3 × 10–15"],["singlerdl","3 × 8–12 / رجل"],["cablekickback","2 × 12–15 / رجل"],["seatedcalf","3 × 10–15"]]}
+  ],
+  "hypertrophy5": [
+    {"name":"صدر + ظهر","items":[["bench","3 × 6–10"],["inclinedb","3 × 8–12"],["cablefly","2 × 12–15"],["latpull","3 × 8–12"],["chestrow","3 × 8–12"],["pullover","2 × 10–15"],["backextension","2 × 12–15"]]},
+    {"name":"رجل","items":[["squat","3 × 6–10"],["legpress","3 × 8–12"],["legext","2 × 10–15"],["rdl","3 × 6–10"],["legcurl","3 × 10–15"],["hipthrust","3 × 8–12"],["calf","3 × 10–15"]]},
+    {"name":"كتف + ذراع","items":[["ohpress","3 × 6–10"],["lateral","2 × 12–18"],["reversefly","2 × 12–18"],["barcurl","3 × 8–12"],["inclinecurl","2 × 10–15"],["hammer","2 × 10–15"],["pushdown","3 × 10–15"],["overheadtri","2 × 10–15"],["skullcrusher","2 × 10–15"]]},
+    {"name":"Upper","items":[["chestpress","3 × 8–12"],["dbflatbench","3 × 8–12"],["pecdeck","2 × 12–15"],["pullup","3 × 5–10"],["barrow","3 × 8–12"],["seatedrow","2 × 8–12"],["lateral","2 × 12–18"]]},
+    {"name":"Lower","items":[["frontsquat","3 × 6–10"],["bulgarian","3 × 8–12 / رجل"],["hacksquat","2 × 8–12"],["seatedcurl","3 × 10–15"],["singlerdl","3 × 8–12 / رجل"],["cablekickback","2 × 12–15 / رجل"],["seatedcalf","3 × 10–15"]]}
+  ],
+  "strength4": [
+    {"name":"Squat Focus","items":[["squat","3 × 4–6"],["frontsquat","3 × 5–8"],["legpress","2 × 8–12"],["rdl","3 × 6–8"],["legcurl","2 × 8–12"],["hipthrust","2 × 8–12"],["plank","3 جولات"]]},
+    {"name":"Bench Focus","items":[["bench","3 × 4–6"],["inclinebar","3 × 5–8"],["chestpress","2 × 8–12"],["barrow","3 × 6–10"],["latpull","3 × 6–10"],["facepull","2 × 12–18"],["pushdown","2 × 10–15"]]},
+    {"name":"Deadlift Focus","items":[["deadlift","3 × 3–5"],["rdl","3 × 5–8"],["legcurl","2 × 8–12"],["latpull","3 × 6–10"],["chestrow","3 × 8–12"],["barrow","2 × 6–10"],["plank","3 جولات"]]},
+    {"name":"Press + Pull","items":[["ohpress","3 × 4–6"],["bench","3 × 5–8"],["dbshoulder","2 × 8–12"],["pullup","3 × 5–10"],["seatedrow","3 × 8–12"],["pullover","2 × 10–15"],["barcurl","2 × 10–15"]]}
+  ],
+  "recomp4": [
+    {"name":"Upper","items":[["bench","3 × 6–10"],["inclinedb","3 × 8–12"],["cablefly","2 × 12–15"],["latpull","3 × 8–12"],["seatedrow","3 × 8–12"],["facepull","2 × 12–18"],["lateral","2 × 12–18"]]},
+    {"name":"Lower","items":[["squat","3 × 6–10"],["legpress","3 × 8–12"],["legext","2 × 10–15"],["rdl","3 × 6–10"],["legcurl","3 × 10–15"],["hipthrust","3 × 8–12"],["calf","3 × 10–15"]]},
+    {"name":"Upper + Cardio","items":[["inclinedb","3 × 8–12"],["chestpress","3 × 8–12"],["pushup","2 × 10–20"],["barrow","3 × 8–12"],["latpull","3 × 8–12"],["facepull","2 × 12–18"],["treadmill","20–30 دقيقة معتدل"]]},
+    {"name":"Lower + Cardio","items":[["legpress","3 × 8–12"],["bulgarian","3 × 8–12 / رجل"],["legext","2 × 10–15"],["hipthrust","3 × 8–12"],["seatedcurl","3 × 10–15"],["singlerdl","2 × 8–12 / رجل"],["bike","20–30 دقيقة معتدل"]]}
+  ],
+  "busy3": [
+    {"name":"Full Body 1","items":[["squat","3 × 6–10"],["rdl","3 × 8–10"],["legcurl","2 × 10–15"],["bench","3 × 6–10"],["seatedrow","3 × 8–12"],["lateral","2 × 12–18"],["plank","3 جولات"]]},
+    {"name":"Full Body 2","items":[["legpress","3 × 8–12"],["hipthrust","3 × 8–12"],["bulgarian","2 × 8–12 / رجل"],["inclinedb","3 × 8–12"],["latpull","3 × 8–12"],["facepull","2 × 12–18"],["crunch","3 × 10–15"]]},
+    {"name":"Full Body 3","items":[["goblet","3 × 8–12"],["legext","2 × 10–15"],["seatedcurl","3 × 10–15"],["chestpress","3 × 8–12"],["barrow","3 × 8–12"],["dbshoulder","2 × 8–12"],["deadbug","3 جولات"]]}
+  ],
+  "calisthenics3": [
+    {"name":"Push + Core","items":[["pushup","3 × 8–20"],["dips","3 × 5–12"],["pikepushup","3 × 6–15"],["plank","3 جولات"],["sideplank","3 جولات / جانب"],["hangingknee","3 × 8–15"],["archerpushup","2 × 6–12"]]},
+    {"name":"Pull + Legs","items":[["pullup","3 × 4–10"],["chinup","3 × 4–10"],["invertedrow","3 × 8–15"],["squat","3 × 12–20"],["bulgarian","3 × 8–15 / رجل"],["stepup","3 × 10–15 / رجل"],["sideplank","3 جولات / جانب"]]},
+    {"name":"Full Body","items":[["pushup","3 × 8–20"],["pullup","3 × 4–10"],["pikepushup","2 × 6–15"],["squat","3 × 12–20"],["bulgarian","3 × 8–15 / رجل"],["stepup","2 × 10–15 / رجل"],["plank","3 جولات"]]}
+  ],
+  "fatloss4": [
+    {"name":"Upper","items":[["bench","3 × 6–10"],["inclinedb","3 × 8–12"],["cablefly","2 × 12–15"],["latpull","3 × 8–12"],["seatedrow","3 × 8–12"],["facepull","2 × 12–18"],["lateral","2 × 12–18"]]},
+    {"name":"Lower","items":[["squat","3 × 6–10"],["legpress","3 × 8–12"],["legext","2 × 10–15"],["rdl","3 × 6–10"],["legcurl","3 × 10–15"],["hipthrust","3 × 8–12"],["calf","3 × 10–15"]]},
+    {"name":"Full Body","items":[["inclinedb","3 × 8–12"],["barrow","3 × 8–12"],["pushup","2 × 10–20"],["bulgarian","3 × 8–12 / رجل"],["hipthrust","3 × 8–12"],["legpress","2 × 10–15"],["plank","3 جولات"]]},
+    {"name":"Conditioning","items":[["treadmill","25–35 دقيقة معتدل"],["bike","10–15 دقيقة سهل/معتدل"],["rower","8–12 دقيقة متدرج"],["crunch","3 × 10–15"]]}
+  ],
+  "ppl5": [
+    {"name":"Push","items":[["bench","3 × 6–10"],["inclinedb","3 × 8–12"],["cablefly","2 × 12–15"],["ohpress","3 × 6–10"],["lateral","2 × 12–18"],["reversefly","2 × 12–18"],["pushdown","2 × 10–15"],["overheadtri","2 × 10–15"],["skullcrusher","2 × 10–15"]]},
+    {"name":"Pull","items":[["latpull","3 × 6–10"],["chestrow","3 × 8–12"],["pullover","2 × 10–15"],["barcurl","3 × 8–12"],["inclinecurl","2 × 10–15"],["hammer","2 × 10–15"],["facepull","2 × 12–18"]]},
+    {"name":"Legs","items":[["squat","3 × 6–10"],["legpress","3 × 8–12"],["legext","2 × 10–15"],["rdl","3 × 6–10"],["legcurl","3 × 10–15"],["hipthrust","3 × 8–12"],["calf","3 × 10–15"]]},
+    {"name":"Upper Push/Pull","items":[["inclinedb","3 × 8–12"],["chestpress","3 × 8–12"],["lateral","2 × 12–18"],["barrow","3 × 8–12"],["latpull","3 × 8–12"],["facepull","2 × 12–18"],["barcurl","2 × 10–15"]]},
+    {"name":"Lower + Arms","items":[["legpress","3 × 8–12"],["hipthrust","3 × 8–12"],["legcurl","3 × 10–15"],["barcurl","3 × 8–12"],["inclinecurl","2 × 10–15"],["hammer","2 × 10–15"],["pushdown","3 × 10–15"],["overheadtri","2 × 10–15"],["skullcrusher","2 × 10–15"]]}
+  ],
+  "arnold6": [
+    {"name":"Chest + Back A","items":[["bench","3 × 6–10"],["inclinedb","3 × 8–12"],["cablefly","2 × 12–15"],["latpull","3 × 8–12"],["chestrow","3 × 8–12"],["pullover","2 × 10–15"],["backextension","2 × 12–15"]]},
+    {"name":"Shoulders + Arms A","items":[["ohpress","3 × 6–10"],["lateral","2 × 12–18"],["reversefly","2 × 12–18"],["barcurl","3 × 8–12"],["inclinecurl","2 × 10–15"],["hammer","2 × 10–15"],["pushdown","3 × 10–15"],["overheadtri","2 × 10–15"],["skullcrusher","2 × 10–15"]]},
+    {"name":"Legs A","items":[["squat","3 × 6–10"],["legpress","3 × 8–12"],["legext","2 × 10–15"],["rdl","3 × 6–10"],["legcurl","3 × 10–15"],["hipthrust","3 × 8–12"],["calf","3 × 10–15"]]},
+    {"name":"Chest + Back B","items":[["chestpress","3 × 8–12"],["dbflatbench","3 × 8–12"],["pecdeck","2 × 12–15"],["pullup","3 × 5–10"],["barrow","3 × 6–10"],["seatedrow","2 × 8–12"],["machinebackextension","2 × 12–15"]]},
+    {"name":"Shoulders + Arms B","items":[["dbshoulder","3 × 8–12"],["cablelateral","2 × 12–18"],["facepull","2 × 12–18"],["cablecurl","3 × 10–15"],["preacher","2 × 10–15"],["crossbodyhammer","2 × 10–15"],["closegripbench","3 × 6–10"],["ropeoverhead","2 × 10–15"],["singlepushdown","2 × 10–15 / يد"]]},
+    {"name":"Legs B","items":[["frontsquat","3 × 6–10"],["bulgarian","3 × 8–12 / رجل"],["hacksquat","2 × 8–12"],["seatedcurl","3 × 10–15"],["singlerdl","3 × 8–12 / رجل"],["cablekickback","2 × 12–15 / رجل"],["seatedcalf","3 × 10–15"]]}
+  ],
+  "dumbbell4": [
+    {"name":"Upper A","items":[["inclinedb","3 × 8–12"],["dbshoulder","3 × 8–12"],["lateral","2 × 12–18"],["onerow","3 × 8–12 / يد"],["reversefly","2 × 12–18"],["shrug","3 × 10–15"],["hammer","2 × 10–15"]]},
+    {"name":"Lower A","items":[["goblet","3 × 8–15"],["bulgarian","3 × 8–12 / رجل"],["stepup","2 × 10–15 / رجل"],["singlerdl","3 × 8–12 / رجل"],["glutebridge","3 × 10–15"],["singlehipthrust","2 × 10–15 / رجل"],["plank","3 جولات"]]},
+    {"name":"Upper B","items":[["dbflatbench","3 × 8–12"],["pushup","3 × 8–20"],["dbshoulder","2 × 8–12"],["onerow","3 × 8–12 / يد"],["reardeltrow","2 × 10–15"],["shrug","3 × 10–15"],["concentrationcurl","2 × 10–15 / يد"]]},
+    {"name":"Lower B","items":[["heelraisedgoblet","3 × 10–15"],["walkinglunge","3 × 10–15 / رجل"],["splitstance","2 × 10–15 / رجل"],["singlerdl","3 × 8–12 / رجل"],["glutebridge","3 × 10–15"],["singlehipthrust","2 × 10–15 / رجل"],["sideplank","3 جولات / جانب"]]}
+  ],
+  "athletic4": [
+    {"name":"Strength A","items":[["squat","3 × 5–8"],["rdl","3 × 6–10"],["bulgarian","2 × 8–12 / رجل"],["bench","3 × 5–8"],["barrow","3 × 6–10"],["pullup","2 × 5–10"],["plank","3 جولات"]]},
+    {"name":"Conditioning","items":[["rower","15–25 دقيقة معتدل"],["bike","10–20 دقيقة سهل"],["stepup","3 × 10 / رجل"]]},
+    {"name":"Strength B","items":[["deadlift","3 × 3–5"],["frontsquat","3 × 5–8"],["hipthrust","2 × 8–12"],["ohpress","3 × 5–8"],["latpull","3 × 6–10"],["chestrow","2 × 8–12"],["sideplank","3 جولات / جانب"]]},
+    {"name":"Mixed","items":[["legpress","3 × 8–12"],["bulgarian","3 × 8–12 / رجل"],["legcurl","2 × 10–15"],["inclinedb","3 × 8–12"],["seatedrow","3 × 8–12"],["dbshoulder","2 × 8–12"],["treadmill","15–25 دقيقة معتدل"]]}
+  ]
+}
