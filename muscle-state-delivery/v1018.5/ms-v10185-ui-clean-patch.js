@@ -1,0 +1,30 @@
+const fs=require('fs'),path=require('path');
+const root=process.argv[2]||process.cwd();
+function read(p){return fs.readFileSync(path.join(root,p),'utf8')}
+function write(p,s){fs.writeFileSync(path.join(root,p),s,'utf8')}
+let f=read('assets/js/ms-food-photo-v1018-1.js');
+f=f.replace("getHealth().then(h=>setStatus(h.vision_enabled?'Gemini جاهز. اضغط «حلّل الصورة» لعرض النتيجة.':'التحليل التلقائي غير مفعّل على السيرفر.',h.vision_enabled?'ok':'warn'))","getHealth().then(h=>{if(!h.vision_enabled)setStatus('التحليل غير متاح مؤقتًا. جرّب مرة أخرى بعد قليل.','warn')})");
+f=f.replace(/provider_auth_failed:'[^']*'/,"provider_auth_failed:'تعذر تشغيل التحليل الآن. جرّب مرة أخرى بعد قليل.'");
+f=f.replace(/provider_free_quota_exceeded:'[^']*'/,"provider_free_quota_exceeded:'الخدمة مشغولة حاليًا. جرّب بعد قليل.'");
+f=f.replace(/provider_quota_or_billing:'[^']*'/,"provider_quota_or_billing:'تعذر تشغيل التحليل الآن. جرّب مرة أخرى بعد قليل.'");
+f=f.replace(/provider_rate_limited:'[^']*'/,"provider_rate_limited:'الخدمة مشغولة حاليًا. جرّب بعد قليل.'");
+f=f.replace(/provider_model_unavailable:'[^']*'/,"provider_model_unavailable:'التحليل غير متاح مؤقتًا. جرّب بعد قليل.'");
+f=f.replace(/provider_request_invalid:'[^']*'/,"provider_request_invalid:'تعذر إكمال التحليل الآن. جرّب مرة أخرى.'");
+if(/Gemini|OpenAI|Billing/.test(f))throw Error('EXTERNAL_PROVIDER_COPY_REMAINS_FOOD');
+write('assets/js/ms-food-photo-v1018-1.js',f);
+let r=read('assets/js/ms-food-photo-result-v10182.js');
+r=r.replace(/provider_auth_failed:'[^']*'/,"provider_auth_failed:'تعذر تشغيل التحليل الآن. جرّب مرة أخرى بعد قليل.'");
+r=r.replace(/provider_free_quota_exceeded:'[^']*'/,"provider_free_quota_exceeded:'الخدمة مشغولة حاليًا. جرّب بعد قليل.'");
+r=r.replace(/provider_quota_or_billing:'[^']*'/,"provider_quota_or_billing:'تعذر تشغيل التحليل الآن. جرّب مرة أخرى بعد قليل.'");
+r=r.replace(/provider_rate_limited:'[^']*'/,"provider_rate_limited:'الخدمة مشغولة حاليًا. جرّب بعد قليل.'");
+r=r.replace(/provider_model_unavailable:'[^']*'/,"provider_model_unavailable:'التحليل غير متاح مؤقتًا. جرّب بعد قليل.'");
+r=r.replace(/provider_request_invalid:'[^']*'/,"provider_request_invalid:'تعذر إكمال التحليل الآن. جرّب مرة أخرى.'");
+if(/Gemini|OpenAI|Billing/.test(r))throw Error('EXTERNAL_PROVIDER_COPY_REMAINS_RESULT');
+write('assets/js/ms-food-photo-result-v10182.js',r);
+let h=read('app.html');
+h=h.replace(/assets\/js\/ms-food-photo-v1018-1\.js\?v=\d+/,'assets/js/ms-food-photo-v1018-1.js?v=10185');
+h=h.replace(/assets\/js\/ms-food-photo-result-v10182\.js\?v=\d+/,'assets/js/ms-food-photo-result-v10182.js?v=10185');
+h=h.replace(/assets\/js\/pwa\.js\?v=\d+/,'assets/js/pwa.js?v=10185');
+write('app.html',h);
+let p=read('assets/js/pwa.js');p=p.replace(/const VERSION='\d+';/,"const VERSION='10185';");write('assets/js/pwa.js',p);
+console.log('V10185_UI_CLEAN_PATCH_OK');
