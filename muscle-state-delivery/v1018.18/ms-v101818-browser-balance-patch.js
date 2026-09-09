@@ -22,13 +22,16 @@ setDay('fatloss4','Upper',[
  ['latpull','3 × 8–12'],['seatedrow','3 × 8–12'],['pullover','2 × 10–15'],['lateral','2 × 12–18']
 ]);
 
-// Browser/desktop cleanup: deterministic final override.
+// Browser/desktop cleanup plus a real desktop quick-access style owner.
 let css=read('assets/css/ms-v101815-clean-mobile.css');
 const marker='/* V101818_BROWSER_DOCK_FINAL_OVERRIDE */';
-if(!css.includes(marker))css+=`\n${marker}\n.ms101815-bottom-nav,.mobile-nav.ms938-nav{display:none!important}\n@media (max-width:980px){\n  .ms101815-bottom-nav{display:grid!important}\n  .mobile-nav.ms938-nav{display:none!important}\n}\n`;
+if(!css.includes(marker))css+=`\n${marker}\n.ms101815-bottom-nav,.mobile-nav.ms938-nav{display:none!important}\n#ms101815QuickAccessBtn{min-height:64px!important;min-width:196px!important;padding:10px 15px!important;border:2px solid #6da77a!important;border-radius:19px!important;background:#c9ff3d!important;color:#214b31!important;box-shadow:0 14px 30px rgba(109,167,122,.30)!important;display:flex!important;align-items:center!important;gap:10px!important;text-align:right!important;transform:none!important}\n#ms101815QuickAccessBtn:hover,#ms101815QuickAccessBtn:focus-visible,#ms101815QuickAccessBtn:active{background:#c9ff3d!important;color:#214b31!important;border-color:#6da77a!important}\n#ms101815QuickAccessBtn .v850-avatar{background:#6da77a!important;color:#fff!important;flex:0 0 auto}\n.ms101815-quick-copy{display:grid!important;gap:2px!important;line-height:1.15!important;flex:1!important}\n.ms101815-quick-copy>b{font-size:1rem!important;color:#214b31!important}\n.ms101815-quick-copy>small{font-size:.74rem!important;color:#214b31!important;opacity:.82!important;white-space:nowrap!important}\n.ms101815-quick-chevron{font-size:1.2rem!important;font-weight:900!important;color:#214b31!important}\n@media (max-width:980px){\n  .ms101815-bottom-nav{display:grid!important}\n  .mobile-nav.ms938-nav{display:none!important}\n  #ms101815QuickAccessBtn{min-height:62px!important;min-width:184px!important;padding:9px 13px!important}\n}\n`;
 must(css.includes(marker),'DESKTOP_DOCK_OVERRIDE_MARKER_MISSING');
 must(css.includes('.ms101815-bottom-nav,.mobile-nav.ms938-nav{display:none!important}'),'DESKTOP_DOCK_HIDE_OVERRIDE_MISSING');
 must(/@media\s*\(\s*max-width\s*:\s*980px\s*\)\s*\{[\s\S]*?\.ms101815-bottom-nav\s*\{\s*display\s*:\s*grid!important\s*\}/m.test(css),'MOBILE_DOCK_SHOW_OVERRIDE_MISSING');
+must(css.includes('#ms101815QuickAccessBtn{min-height:64px!important;min-width:196px!important'),'DESKTOP_QUICK_ACCESS_STYLE_MISSING');
+must(css.includes('background:#c9ff3d!important'),'QUICK_ACCESS_LIME_MISSING');
+must(css.includes('.ms101815-quick-copy{display:grid!important'),'DESKTOP_QUICK_COPY_STYLE_MISSING');
 write('assets/css/ms-v101815-clean-mobile.css',css);
 
 let runtime=read('assets/js/ms-v101815-clean-mobile.js');
@@ -56,6 +59,8 @@ runtime=runtime.slice(0,mountStart)+mount+runtime.slice(mountEnd);
 if(!runtime.includes("MOBILE.addEventListener?.('change',repair)"))runtime=runtime.replace('function boot(){repair();',"function boot(){repair();MOBILE.addEventListener?.('change',repair);");
 must(runtime.includes('if(!MOBILE.matches){n?.remove();return}'),'DESKTOP_RUNTIME_DOCK_GUARD_MISSING');
 must(runtime.includes("MOBILE.addEventListener?.('change',repair)"),'RESPONSIVE_DOCK_LISTENER_MISSING');
+must(runtime.includes("b.id='ms101815QuickAccessBtn'"),'QUICK_ACCESS_RUNTIME_OWNER_MISSING');
+must(runtime.includes("background:'#c9ff3d'"),'QUICK_ACCESS_INLINE_LIME_MISSING');
 write('assets/js/ms-v101815-clean-mobile.js',runtime);
 
 // Replace training sessions and synchronize program metadata.
@@ -84,5 +89,6 @@ console.log('V101818_BROWSER_BALANCE_PATCH_OK');
 console.log('corrected_days=recomp4_upper,recomp4_upper_cardio,fatloss4_upper');
 console.log('desktop_mobile_dock=FINAL_OVERRIDE_HIDDEN');
 console.log('mobile_dock=RESPONSIVE_ONLY');
+console.log('browser_quick_access=FLUORESCENT_LIME_FIXED');
 console.log('training_plans=BALANCED_SOURCE_REPLACED');
 console.log('program_metadata=SYNCED');
