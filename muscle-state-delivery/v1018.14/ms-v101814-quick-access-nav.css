@@ -1,0 +1,30 @@
+:root{
+  --ms-vanilla:#fff7e8;
+  --ms-cream:#f6ead7;
+  --ms-green:#6da77a;
+  --ms-green-secondary:#8fc79a;
+  --ms-lime:#c9ff3d;
+  --ms-green-ink:#214b31;
+}
+@media (max-width:980px){
+  .mobile-nav.ms938-nav{grid-template-columns:repeat(3,minmax(0,1fr))!important;background:var(--ms-vanilla)!important;border-top:1px solid rgba(109,167,122,.28)!important;box-shadow:0 -10px 28px rgba(33,75,49,.08)!important}
+  .mobile-nav.ms938-nav>button{background:transparent!important;color:var(--ms-green-ink)!important;border:0!important}
+  .mobile-nav.ms938-nav>button.active{background:var(--ms-lime)!important;color:var(--ms-green-ink)!important;border-radius:16px!important}
+  #ms101814QuickAccessBtn{min-height:58px!important;min-width:172px!important;padding:8px 12px!important;border:1px solid rgba(109,167,122,.36)!important;background:linear-gradient(135deg,var(--ms-vanilla),var(--ms-cream))!important;color:var(--ms-green-ink)!important;border-radius:18px!important;box-shadow:0 10px 24px rgba(33,75,49,.1)!important;display:flex!important;align-items:center!important;gap:10px!important;text-align:right!important}
+  #ms101814QuickAccessBtn .v850-avatar{flex:0 0 auto}
+  .ms101814-quick-copy{display:grid;gap:1px;line-height:1.2;flex:1}
+  .ms101814-quick-copy>b{font-size:.98rem;color:var(--ms-green-ink)}
+  .ms101814-quick-copy>small{font-size:.72rem;color:#52735c;white-space:nowrap}
+  .ms101814-quick-chevron{font-size:1.15rem;color:var(--ms-green)}
+}
+.ms101814-weight-cta{display:flex;align-items:center;gap:14px;margin:14px 0 18px;padding:18px 18px;min-height:84px;border:2px solid var(--ms-green);border-radius:20px;background:linear-gradient(135deg,var(--ms-lime) 0%,#efffc8 40%,var(--ms-vanilla) 100%);color:var(--ms-green-ink);text-decoration:none;box-shadow:0 14px 30px rgba(33,75,49,.11)}
+.ms101814-weight-cta .ms101814-weight-icon{width:50px;height:50px;display:grid;place-items:center;border-radius:16px;background:var(--ms-green);color:#fff;flex:0 0 auto}
+.ms101814-weight-cta svg{width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ms101814-weight-copy{display:grid;gap:2px;flex:1}.ms101814-weight-copy small{font-size:.76rem;color:#52735c}.ms101814-weight-copy strong{font-size:1.08rem;color:var(--ms-green-ink)}.ms101814-weight-copy em{font-style:normal;font-size:.8rem;color:#52735c}.ms101814-weight-arrow{font-size:1.3rem;font-weight:900;color:var(--ms-green-ink)}
+#ms10181FoodPhotoCard.ms101814-food-first{margin-top:10px!important;margin-bottom:18px!important;border:2px solid rgba(109,167,122,.5)!important;box-shadow:0 14px 30px rgba(33,75,49,.09)!important;background:linear-gradient(135deg,var(--ms-vanilla),#eff8f0)!important}
+#ms10181FoodPhotoCard.ms101814-food-first h3{font-size:1.12rem!important;color:var(--ms-green-ink)!important}
+.ms101814-quick-sheet{position:fixed;inset:0;z-index:99999;background:rgba(33,75,49,.18);backdrop-filter:blur(8px);display:grid;align-items:end;padding:12px}
+.ms101814-quick-box{width:min(640px,100%);margin:0 auto;background:var(--ms-vanilla);border:1px solid rgba(109,167,122,.34);border-radius:24px 24px 18px 18px;padding:18px;box-shadow:0 24px 60px rgba(33,75,49,.18)}
+.ms101814-quick-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:14px}.ms101814-quick-head small{color:#52735c}.ms101814-quick-head h2{margin:2px 0 0;color:var(--ms-green-ink);font-size:1.25rem}.ms101814-quick-close{width:42px;height:42px;border:0;border-radius:14px;background:var(--ms-cream);color:var(--ms-green-ink);font-size:1.4rem}
+.ms101814-quick-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.ms101814-quick-grid>a,.ms101814-quick-grid>button{min-height:74px;padding:12px;border:1px solid rgba(109,167,122,.28);border-radius:16px;background:#fff;color:var(--ms-green-ink);text-decoration:none;text-align:right;display:grid;gap:3px}.ms101814-quick-grid>b{font-size:1rem}.ms101814-quick-grid small{color:#52735c;font-size:.78rem}.ms101814-quick-grid .ms101814-packages{background:var(--ms-lime);border-color:var(--ms-green)}
+@media (max-width:480px){#ms101814QuickAccessBtn{min-width:158px!important}.ms101814-quick-grid{grid-template-columns:1fr 1fr}.ms101814-weight-cta{padding:16px 14px}.ms101814-weight-copy strong{font-size:1rem}}
